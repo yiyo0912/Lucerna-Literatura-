@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lucerna · Proyecto Final</title>
+  <title>Lucerna · Proyecto Final · Almacenamiento Local</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
 
@@ -18,7 +18,6 @@
       --text:#e8ecf1;
       --muted:#b6bec9;
       --line:rgba(255,255,255,.08);
-
       --glass:rgba(255,255,255,.05);
       --shadow:0 10px 40px rgba(0,0,0,.45);
     }
@@ -38,20 +37,17 @@
         radial-gradient(circle at top left, rgba(212,175,55,.10), transparent 30%),
         radial-gradient(circle at bottom right, rgba(212,175,55,.08), transparent 25%),
         var(--bg);
-
       color:var(--text);
       font-family:'Cormorant Garamond', serif;
       overflow-x:hidden;
       min-height:100vh;
     }
 
-    /* TEXTURA */
     body::before{
       content:'';
       position:fixed;
       inset:0;
-      background-image:
-      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+      background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
       pointer-events:none;
       z-index:999;
     }
@@ -59,19 +55,10 @@
     .top-line{
       width:100%;
       height:5px;
-      background:
-      linear-gradient(
-        90deg,
-        #5f4b17,
-        var(--gold),
-        #fff2b0,
-        var(--gold),
-        #5f4b17
-      );
+      background:linear-gradient(90deg, #5f4b17, var(--gold), #fff2b0, var(--gold), #5f4b17);
       box-shadow:0 0 15px rgba(212,175,55,.5);
     }
 
-    /* NAV */
     nav{
       width:100%;
       padding:24px 60px;
@@ -115,7 +102,6 @@
       background:linear-gradient(to right, transparent, var(--gold));
     }
 
-    /* HERO */
     .hero{
       min-height:88vh;
       position:relative;
@@ -131,8 +117,7 @@
       content:'';
       position:absolute;
       inset:0;
-      background:
-      linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.7)),
+      background:linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.7)),
       url('https://images.unsplash.com/photo-1512820790803-83ca734da794?q=80&w=1920&auto=format&fit=crop');
       background-size:cover;
       background-position:center;
@@ -212,7 +197,6 @@
       box-shadow:0 12px 30px rgba(212,175,55,.3);
     }
 
-    /* ORNAMENT */
     .ornament{
       display:flex;
       align-items:center;
@@ -230,7 +214,6 @@
       background:linear-gradient(to right, transparent, var(--gold));
     }
 
-    /* SECTION */
     .cards-section{
       width:min(1300px, 92%);
       margin:auto;
@@ -260,15 +243,10 @@
       gap:32px;
     }
 
-    /* CARD */
     .category-block{
       border-radius:24px;
       overflow:hidden;
-      background:linear-gradient(
-        180deg,
-        rgba(255,255,255,.06),
-        rgba(255,255,255,.03)
-      );
+      background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
       border:1px solid rgba(255,255,255,.08);
       backdrop-filter:blur(12px);
       box-shadow:var(--shadow);
@@ -279,20 +257,14 @@
     .category-block:hover{
       transform:translateY(-10px);
       border-color:rgba(212,175,55,.5);
-      box-shadow:
-      0 20px 50px rgba(0,0,0,.5),
-      0 0 30px rgba(212,175,55,.12);
+      box-shadow:0 20px 50px rgba(0,0,0,.5), 0 0 30px rgba(212,175,55,.12);
     }
 
     .category-block::before{
       content:'';
       position:absolute;
       inset:0;
-      background:linear-gradient(
-        130deg,
-        rgba(212,175,55,.10),
-        transparent 30%
-      );
+      background:linear-gradient(130deg, rgba(212,175,55,.10), transparent 30%);
       pointer-events:none;
     }
 
@@ -319,7 +291,6 @@
       transform:scale(1.08);
     }
 
-    /* IMÁGENES */
     .audiovisuales .card::before{
       background-image:url('https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?q=80&w=1200&auto=format&fit=crop');
     }
@@ -339,12 +310,7 @@
     .card-overlay{
       position:absolute;
       inset:0;
-      background:
-      linear-gradient(
-        180deg,
-        rgba(0,0,0,.15),
-        rgba(0,0,0,.75)
-      );
+      background:linear-gradient(180deg, rgba(0,0,0,.15), rgba(0,0,0,.75));
     }
 
     .card-body{
@@ -376,16 +342,11 @@
       font-size:1.05rem;
     }
 
-    /* BOTÓN */
     .upload-btn{
       border:none;
       cursor:pointer;
       padding:14px 24px;
-      background:linear-gradient(
-        135deg,
-        var(--gold),
-        #f0d37b
-      );
+      background:linear-gradient(135deg, var(--gold), #f0d37b);
       color:#111;
       border-radius:999px;
       font-family:'Inter', sans-serif;
@@ -407,17 +368,21 @@
       background:rgba(0,0,0,.18);
       border-top:1px solid rgba(255,255,255,.05);
       min-height:90px;
+      max-height:300px;
+      overflow-y:auto;
     }
 
     .file-item{
       display:flex;
       align-items:center;
       justify-content:space-between;
-      padding:12px 14px;
+      padding:10px 12px;
       border-radius:12px;
-      margin-bottom:10px;
+      margin-bottom:8px;
       background:rgba(255,255,255,.03);
       transition:.25s;
+      flex-wrap:wrap;
+      gap:8px;
     }
 
     .file-item:hover{
@@ -430,23 +395,109 @@
       font-family:'Inter', sans-serif;
       font-size:.88rem;
       transition:.25s;
+      word-break:break-all;
+      flex:1;
+      cursor:pointer;
     }
 
     .file-link:hover{
       color:var(--gold-soft);
+      text-decoration:underline;
     }
 
-    .loader{
-      margin-top:18px;
-      display:none;
-      color:var(--gold-soft);
+    .btn-group{
+      display:flex;
+      gap:8px;
+    }
+
+    .action-btn{
+      background:rgba(255,255,255,.1);
+      border:none;
+      padding:5px 12px;
+      border-radius:20px;
+      font-size:.7rem;
       font-family:'Inter', sans-serif;
-      letter-spacing:.2em;
-      text-transform:uppercase;
-      font-size:.68rem;
+      cursor:pointer;
+      transition:.2s;
     }
 
-    /* FOOTER */
+    .view-btn{ color:var(--gold-soft); }
+    .view-btn:hover{ background:rgba(212,175,55,.3); }
+    .download-btn{ color:#a0d6ff; }
+    .download-btn:hover{ background:rgba(100,150,255,.2); }
+    .delete-btn{ color:#ff9999; }
+    .delete-btn:hover{ background:#ff4444; color:white; }
+
+    .modal{
+      display:none;
+      position:fixed;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+      background:rgba(0,0,0,.9);
+      z-index:1000;
+      justify-content:center;
+      align-items:center;
+      backdrop-filter:blur(8px);
+    }
+
+    .modal-content{
+      background:var(--bg-soft);
+      border-radius:28px;
+      width:90%;
+      max-width:1000px;
+      max-height:85vh;
+      overflow:auto;
+      border:1px solid var(--gold);
+      padding:20px;
+      position:relative;
+    }
+
+    .modal-close{
+      position:absolute;
+      top:15px;
+      right:25px;
+      font-size:2rem;
+      cursor:pointer;
+      color:var(--gold);
+    }
+
+    .modal-title{
+      font-family:'Cinzel', serif;
+      margin-bottom:20px;
+      padding-right:30px;
+    }
+
+    .viewer-container{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      min-height:300px;
+    }
+
+    video, audio, img{
+      max-width:100%;
+      max-height:60vh;
+      border-radius:16px;
+    }
+
+    iframe{
+      width:100%;
+      height:70vh;
+      border:none;
+      border-radius:16px;
+    }
+
+    pre{
+      background:#0a0c10;
+      padding:20px;
+      border-radius:16px;
+      overflow:auto;
+      white-space:pre-wrap;
+      font-family:monospace;
+    }
+
     footer{
       border-top:1px solid var(--line);
       padding:45px 20px;
@@ -466,25 +517,19 @@
       font-size:.95rem;
     }
 
-    /* RESPONSIVE */
     @media(max-width:768px){
-
       nav{
         padding:20px;
       }
-
       .hero{
         min-height:75vh;
       }
-
       .hero h2{
         font-size:3.4rem;
       }
-
       .hero p{
         font-size:1.1rem;
       }
-
       .cards-grid{
         grid-template-columns:1fr;
       }
@@ -494,369 +539,378 @@
 
 <body>
 
-  <div class="top-line"></div>
+<div class="top-line"></div>
 
-  <nav>
-    <div class="brand">
-      <h1>Lucerna</h1>
-      <span>Literatura Emergente</span>
-    </div>
+<nav>
+  <div class="brand">
+    <h1>Lucerna</h1>
+    <span>Literatura Emergente · Local</span>
+  </div>
+  <div class="nav-decoration"></div>
+</nav>
 
-    <div class="nav-decoration"></div>
-  </nav>
+<section class="hero">
+  <div class="hero-glow"></div>
+  <div class="hero-content">
+    <div class="hero-sub">Archivo Digital · Proyecto Final</div>
+    <h2>Proyecto Final</h2>
+    <p>Un espacio elegante y contemporáneo para preservar, compartir y organizar las expresiones creativas de Literatura Emergente.<br><strong style="color:var(--gold-soft)">✓ Almacenamiento local ✓ Visor integrado ✓ Sin descargas automáticas</strong></p>
+    <a href="#contenido" class="hero-btn">Explorar contenido ✦</a>
+  </div>
+</section>
 
-  <!-- HERO -->
-  <section class="hero">
+<div class="ornament">✦</div>
 
-    <div class="hero-glow"></div>
-
-    <div class="hero-content">
-      <div class="hero-sub">
-        Archivo Digital · Proyecto Académico
-      </div>
-
-      <h2>Proyecto Final</h2>
-
-      <p>
-        Un espacio elegante y contemporáneo para preservar,
-        compartir y organizar las expresiones creativas de
-        Literatura Emergente.
-      </p>
-
-      <a href="#contenido" class="hero-btn">
-        Explorar contenido ✦
-      </a>
-    </div>
-  </section>
-
-  <!-- ORNAMENT -->
-  <div class="ornament">
-    ✦
+<section class="cards-section" id="contenido">
+  <div class="section-title">
+    <h3>Categorías Creativas</h3>
+    <p>Gestiona y comparte materiales audiovisuales, imágenes, textos y audios en un entorno visualmente memorable.</p>
   </div>
 
-  <!-- SECTION -->
-  <section class="cards-section" id="contenido">
-
-    <div class="section-title">
-      <h3>Categorías Creativas</h3>
-      <p>
-        Gestiona y comparte materiales audiovisuales,
-        imágenes, textos y audios en un entorno visualmente memorable.
-      </p>
+  <div class="cards-grid">
+    <!-- Audiovisuales -->
+    <div class="category-block audiovisuales">
+      <div class="card"><div class="card-overlay"></div><div class="card-body">
+        <span class="card-icon">🎬</span><span class="card-label">Audiovisuales</span>
+        <p class="card-description">Cortometrajes, videopoemas, documentales y piezas visuales.</p>
+        <button class="upload-btn" onclick="document.getElementById('inp-av').click()">Subir archivo</button>
+        <input type="file" id="inp-av" accept="video/*" style="display:none" onchange="subirArchivo(this, 'audiovisuales')" />
+        <div id="load-audiovisuales" class="loader" style="display:none"></div>
+      </div></div>
+      <div class="file-list" id="list-audiovisuales"></div>
     </div>
 
-    <div class="cards-grid">
-
-      <!-- AUDIOVISUALES -->
-      <div class="category-block audiovisuales">
-        <div class="card">
-          <div class="card-overlay"></div>
-
-          <div class="card-body">
-            <span class="card-icon">🎬</span>
-
-            <span class="card-label">
-              Audiovisuales
-            </span>
-
-            <p class="card-description">
-              Cortometrajes, videopoemas, documentales y piezas visuales.
-            </p>
-
-            <button class="upload-btn"
-              onclick="document.getElementById('inp-av').click()">
-              Subir archivo
-            </button>
-
-            <input
-              type="file"
-              id="inp-av"
-              accept="video/*"
-              style="display:none"
-              onchange="subirArchivo(this, 'audiovisuales')"
-            />
-
-            <div id="load-audiovisuales" class="loader">
-              Enviando a la nube...
-            </div>
-          </div>
-        </div>
-
-        <div class="file-list" id="list-audiovisuales"></div>
-      </div>
-
-      <!-- IMAGENES -->
-      <div class="category-block imagenes">
-        <div class="card">
-          <div class="card-overlay"></div>
-
-          <div class="card-body">
-            <span class="card-icon">🖼️</span>
-
-            <span class="card-label">
-              Imágenes
-            </span>
-
-            <p class="card-description">
-              Fotografías, ilustraciones y composiciones artísticas.
-            </p>
-
-            <button class="upload-btn"
-              onclick="document.getElementById('inp-img').click()">
-              Subir archivo
-            </button>
-
-            <input
-              type="file"
-              id="inp-img"
-              accept="image/*"
-              style="display:none"
-              onchange="subirArchivo(this, 'imagenes')"
-            />
-
-            <div id="load-imagenes" class="loader">
-              Enviando a la nube...
-            </div>
-          </div>
-        </div>
-
-        <div class="file-list" id="list-imagenes"></div>
-      </div>
-
-      <!-- TEXTOS -->
-      <div class="category-block textos">
-        <div class="card">
-          <div class="card-overlay"></div>
-
-          <div class="card-body">
-            <span class="card-icon">📝</span>
-
-            <span class="card-label">
-              Textos
-            </span>
-
-            <p class="card-description">
-              Ensayos, poemas, novelas y documentos académicos.
-            </p>
-
-            <button class="upload-btn"
-              onclick="document.getElementById('inp-txt').click()">
-              Subir archivo
-            </button>
-
-            <input
-              type="file"
-              id="inp-txt"
-              accept=".pdf,.doc,.docx,.txt"
-              style="display:none"
-              onchange="subirArchivo(this, 'textos')"
-            />
-
-            <div id="load-textos" class="loader">
-              Enviando a la nube...
-            </div>
-          </div>
-        </div>
-
-        <div class="file-list" id="list-textos"></div>
-      </div>
-
-      <!-- AUDIOS -->
-      <div class="category-block audios">
-        <div class="card">
-          <div class="card-overlay"></div>
-
-          <div class="card-body">
-            <span class="card-icon">🎙️</span>
-
-            <span class="card-label">
-              Audios
-            </span>
-
-            <p class="card-description">
-              Podcasts, narraciones, música experimental y registros sonoros.
-            </p>
-
-            <button class="upload-btn"
-              onclick="document.getElementById('inp-aud').click()">
-              Subir archivo
-            </button>
-
-            <input
-              type="file"
-              id="inp-aud"
-              accept="audio/*"
-              style="display:none"
-              onchange="subirArchivo(this, 'audios')"
-            />
-
-            <div id="load-audios" class="loader">
-              Enviando a la nube...
-            </div>
-          </div>
-        </div>
-
-        <div class="file-list" id="list-audios"></div>
-      </div>
-
+    <!-- Imágenes -->
+    <div class="category-block imagenes">
+      <div class="card"><div class="card-overlay"></div><div class="card-body">
+        <span class="card-icon">🖼️</span><span class="card-label">Imágenes</span>
+        <p class="card-description">Fotografías, ilustraciones y composiciones artísticas.</p>
+        <button class="upload-btn" onclick="document.getElementById('inp-img').click()">Subir archivo</button>
+        <input type="file" id="inp-img" accept="image/*" style="display:none" onchange="subirArchivo(this, 'imagenes')" />
+        <div id="load-imagenes" class="loader" style="display:none"></div>
+      </div></div>
+      <div class="file-list" id="list-imagenes"></div>
     </div>
-  </section>
 
-  <!-- FOOTER -->
-  <footer>
-    <h4>LUCERNA</h4>
+    <!-- Textos -->
+    <div class="category-block textos">
+      <div class="card"><div class="card-overlay"></div><div class="card-body">
+        <span class="card-icon">📝</span><span class="card-label">Textos</span>
+        <p class="card-description">Ensayos, poemas, novelas y documentos académicos.</p>
+        <button class="upload-btn" onclick="document.getElementById('inp-txt').click()">Subir archivo</button>
+        <input type="file" id="inp-txt" accept=".pdf,.doc,.docx,.txt" style="display:none" onchange="subirArchivo(this, 'textos')" />
+        <div id="load-textos" class="loader" style="display:none"></div>
+      </div></div>
+      <div class="file-list" id="list-textos"></div>
+    </div>
 
-    <p>
-      Proyecto Final · Literatura Emergente · Plataforma Creativa
-    </p>
-  </footer>
+    <!-- Audios -->
+    <div class="category-block audios">
+      <div class="card"><div class="card-overlay"></div><div class="card-body">
+        <span class="card-icon">🎙️</span><span class="card-label">Audios</span>
+        <p class="card-description">Podcasts, narraciones, música experimental y registros sonoros.</p>
+        <button class="upload-btn" onclick="document.getElementById('inp-aud').click()">Subir archivo</button>
+        <input type="file" id="inp-aud" accept="audio/*" style="display:none" onchange="subirArchivo(this, 'audios')" />
+        <div id="load-audios" class="loader" style="display:none"></div>
+      </div></div>
+      <div class="file-list" id="list-audios"></div>
+    </div>
+  </div>
+</section>
 
-  <!-- FIREBASE -->
-  <script type="module">
+<footer>
+  <h4>LUCERNA</h4>
+  <p>Proyecto Final · Literatura Emergente · Plataforma Creativa</p>
+</footer>
 
-    import { initializeApp }
-    from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+<div id="fileModal" class="modal">
+  <div class="modal-content">
+    <span class="modal-close" onclick="cerrarModal()">&times;</span>
+    <div class="modal-title" id="modalTitle"></div>
+    <div id="modalViewer" class="viewer-container"></div>
+  </div>
+</div>
 
-    import {
-      getStorage,
-      ref,
-      uploadBytes,
-      getDownloadURL
-    } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-storage.js";
+<script>
+  // ======================== INDEXEDDB ========================
+  const DB_NAME = 'LucernaDB';
+  const DB_VERSION = 2;
+  const STORE_NAME = 'archivos';
+  let db = null;
 
-    import {
-      getFirestore,
-      collection,
-      addDoc,
-      onSnapshot,
-      query,
-      where,
-      orderBy
-    } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+  function abrirDB() {
+    return new Promise((resolve, reject) => {
+      if (db && db.name === DB_NAME) return resolve(db);
+      const request = indexedDB.open(DB_NAME, DB_VERSION);
+      request.onerror = () => reject(request.error);
+      request.onsuccess = () => { db = request.result; resolve(db); };
+      request.onupgradeneeded = (event) => {
+        const db = event.target.result;
+        if (!db.objectStoreNames.contains(STORE_NAME)) {
+          const store = db.createObjectStore(STORE_NAME, { keyPath: 'id' });
+          store.createIndex('categoria', 'categoria', { unique: false });
+          store.createIndex('fecha', 'fecha', { unique: false });
+        }
+      };
+    });
+  }
 
-    const firebaseConfig = {
-
-      apiKey: "AIzaSyC2SQxitXdpdgOYmmye8g-JrxFzBSMwApM",
-
-      authDomain: "lucerna-56bf7.firebaseapp.com",
-
-      projectId: "lucerna-56bf7",
-
-      storageBucket: "lucerna-56bf7.firebasestorage.app",
-
-      messagingSenderId: "190514023791",
-
-      appId: "1:190514023791:web:47235a188fee170a99ec9a",
-
-      measurementId: "G-EDM7S5TDS1"
+  async function guardarArchivo(file, categoria) {
+    const id = Date.now() + '_' + Math.random().toString(36).substring(2, 10);
+    const arrayBuffer = await file.arrayBuffer();
+    const archivoData = {
+      id: id,
+      nombre: file.name,
+      tipo: file.type,
+      tamaño: file.size,
+      categoria: categoria,
+      fecha: new Date().toISOString(),
+      data: arrayBuffer
     };
+    await abrirDB();
+    return new Promise((resolve, reject) => {
+      const tx = db.transaction([STORE_NAME], 'readwrite');
+      const store = tx.objectStore(STORE_NAME);
+      const request = store.add(archivoData);
+      request.onsuccess = () => resolve(id);
+      request.onerror = () => reject(request.error);
+    });
+  }
 
-    const app = initializeApp(firebaseConfig);
+  async function obtenerArchivos(categoria) {
+    await abrirDB();
+    return new Promise((resolve, reject) => {
+      const tx = db.transaction([STORE_NAME], 'readonly');
+      const store = tx.objectStore(STORE_NAME);
+      const index = store.index('categoria');
+      const request = index.getAll(categoria);
+      request.onsuccess = () => {
+        let archivos = request.result;
+        archivos.sort((a, b) => new Date(b.fecha) - new Date(a.fecha));
+        resolve(archivos);
+      };
+      request.onerror = () => reject(request.error);
+    });
+  }
 
-    const storage = getStorage(app);
+  async function eliminarArchivoDeDB(id) {
+    await abrirDB();
+    return new Promise((resolve, reject) => {
+      const tx = db.transaction([STORE_NAME], 'readwrite');
+      const store = tx.objectStore(STORE_NAME);
+      const request = store.delete(id);
+      request.onsuccess = () => resolve();
+      request.onerror = () => reject(request.error);
+    });
+  }
 
-    const db = getFirestore(app);
+  // ======================== FUNCIONES GLOBALES ========================
+  window.subirArchivo = async (input, categoria) => {
+    const file = input.files[0];
+    if (!file) return;
+    const loader = document.getElementById(`load-${categoria}`);
+    if (loader) loader.style.display = 'block';
+    const btn = input.previousElementSibling;
+    const originalText = btn.innerText;
+    btn.innerText = '⏳ Subiendo...';
+    btn.disabled = true;
+    try {
+      await guardarArchivo(file, categoria);
+      await cargarLista(categoria);
+    } catch (err) {
+      console.error(err);
+      alert('Error al guardar: ' + err.message);
+    } finally {
+      if (loader) loader.style.display = 'none';
+      btn.innerText = originalText;
+      btn.disabled = false;
+      input.value = '';
+    }
+  };
 
-    window.subirArchivo = async (input, categoria) => {
+  window.eliminarArchivo = async (categoria, id) => {
+    if (!confirm('¿Eliminar este archivo permanentemente?')) return;
+    try {
+      await eliminarArchivoDeDB(id);
+      await cargarLista(categoria);
+    } catch (err) {
+      alert('Error al eliminar: ' + err.message);
+    }
+  };
 
-      const file = input.files[0];
+  window.descargarArchivo = async (id, nombre) => {
+    try {
+      await abrirDB();
+      const tx = db.transaction([STORE_NAME], 'readonly');
+      const store = tx.objectStore(STORE_NAME);
+      const request = store.get(id);
+      request.onsuccess = () => {
+        const archivo = request.result;
+        if (!archivo || !archivo.data) return;
+        const blob = new Blob([archivo.data], { type: archivo.tipo });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = nombre;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+      };
+    } catch (err) {
+      alert('Error al descargar');
+    }
+  };
 
-      if (!file) return;
+  // Visor modal
+  let currentBlobUrl = null;
+  window.cerrarModal = () => {
+    const modal = document.getElementById('fileModal');
+    modal.style.display = 'none';
+    document.getElementById('modalViewer').innerHTML = '';
+    if (currentBlobUrl) {
+      URL.revokeObjectURL(currentBlobUrl);
+      currentBlobUrl = null;
+    }
+  };
 
-      const loader =
-        document.getElementById(`load-${categoria}`);
+  window.abrirVisor = async (id, nombre, tipoMime) => {
+    try {
+      await abrirDB();
+      const tx = db.transaction([STORE_NAME], 'readonly');
+      const store = tx.objectStore(STORE_NAME);
+      const request = store.get(id);
+      request.onsuccess = () => {
+        const archivo = request.result;
+        if (!archivo || !archivo.data) {
+          alert('Archivo no encontrado');
+          return;
+        }
+        const blob = new Blob([archivo.data], { type: archivo.tipo });
+        const url = URL.createObjectURL(blob);
+        currentBlobUrl = url;
 
-      loader.style.display = "block";
+        const modal = document.getElementById('fileModal');
+        document.getElementById('modalTitle').innerText = nombre;
+        const viewer = document.getElementById('modalViewer');
+        viewer.innerHTML = '';
 
-      try {
+        const extension = nombre.split('.').pop().toLowerCase();
+        const mime = archivo.tipo;
 
-        const storageRef = ref(
-          storage,
-          `proyectos/${categoria}/${Date.now()}-${file.name}`
-        );
-
-        const snapshot =
-          await uploadBytes(storageRef, file);
-
-        const url =
-          await getDownloadURL(snapshot.ref);
-
-        await addDoc(collection(db, "archivos"), {
-
-          nombre: file.name,
-
-          url: url,
-
-          categoria: categoria,
-
-          fecha: new Date()
-        });
-
-      } catch (e) {
-
-        console.error(e);
-
-        alert(
-          "Error al subir. Revisa las reglas de Firebase."
-        );
-
-      } finally {
-
-        loader.style.display = "none";
-
-        input.value = "";
-      }
-    };
-
-    ['audiovisuales', 'imagenes', 'textos', 'audios']
-    .forEach(cat => {
-
-      const q = query(
-
-        collection(db, "archivos"),
-
-        where("categoria", "==", cat),
-
-        orderBy("fecha", "desc")
-      );
-
-      onSnapshot(q, (snap) => {
-
-        const container =
-          document.getElementById(`list-${cat}`);
-
-        container.innerHTML = snap.empty
-
-        ? `<p style="
-            color:rgba(255,255,255,.35);
-            font-family:Inter,sans-serif;
-            font-size:.82rem;
-            text-align:center;
-            padding:18px;
-          ">
-            Sin archivos disponibles
-          </p>`
-
-        : '';
-
-        snap.forEach(doc => {
-
-          const d = doc.data();
-
-          container.innerHTML += `
-            <div class="file-item">
-              <a href="${d.url}"
-                target="_blank"
-                class="file-link">
-                📄 ${d.nombre}
-              </a>
+        if (mime.startsWith('image/')) {
+          const img = document.createElement('img');
+          img.src = url;
+          viewer.appendChild(img);
+        } else if (mime.startsWith('video/')) {
+          const video = document.createElement('video');
+          video.src = url;
+          video.controls = true;
+          viewer.appendChild(video);
+        } else if (mime.startsWith('audio/')) {
+          const audio = document.createElement('audio');
+          audio.src = url;
+          audio.controls = true;
+          viewer.appendChild(audio);
+        } else if (mime === 'application/pdf' || extension === 'pdf') {
+          const iframe = document.createElement('iframe');
+          iframe.src = url;
+          iframe.style.width = '100%';
+          iframe.style.height = '70vh';
+          viewer.appendChild(iframe);
+        } else if (extension === 'txt' || mime === 'text/plain') {
+          const reader = new FileReader();
+          reader.onload = (e) => {
+            const pre = document.createElement('pre');
+            pre.textContent = e.target.result;
+            viewer.innerHTML = '';
+            viewer.appendChild(pre);
+          };
+          reader.readAsText(blob);
+        } else if (extension === 'doc' || extension === 'docx' || mime === 'application/msword' || mime === 'application/vnd.openxmlformats-officedocument.wordprocessingml.document') {
+          viewer.innerHTML = `
+            <div style="padding:20px; text-align:center;">
+              <p>⚠️ Los archivos .doc y .docx no pueden visualizarse directamente en el navegador.</p>
+              <br>
+              <button id="downloadDocBtn" style="background:#d4af37; border:none; padding:10px 20px; border-radius:10px; cursor:pointer;">⬇️ Descargar archivo</button>
             </div>
           `;
-        });
-      });
-    });
+          document.getElementById('downloadDocBtn')?.addEventListener('click', () => {
+            window.descargarArchivo(id, nombre);
+            window.cerrarModal();
+          });
+        } else {
+          const iframe = document.createElement('iframe');
+          iframe.src = url;
+          iframe.style.width = '100%';
+          iframe.style.height = '70vh';
+          viewer.appendChild(iframe);
+        }
+        modal.style.display = 'flex';
+      };
+      request.onerror = () => alert('Error al recuperar archivo');
+    } catch (err) {
+      alert('Error: ' + err.message);
+    }
+  };
 
-  </script>
+  // Renderizar lista de cada categoría
+  async function cargarLista(categoria) {
+    const container = document.getElementById(`list-${categoria}`);
+    if (!container) return;
+    try {
+      const archivos = await obtenerArchivos(categoria);
+      if (archivos.length === 0) {
+        container.innerHTML = `<p style="color:rgba(255,255,255,.35); text-align:center; padding:18px;">📭 Sin archivos disponibles</p>`;
+        return;
+      }
+      let html = '';
+      for (const arch of archivos) {
+        let icono = "📄";
+        if (arch.tipo?.startsWith('image/')) icono = "🖼️";
+        else if (arch.tipo?.startsWith('video/')) icono = "🎬";
+        else if (arch.tipo?.startsWith('audio/')) icono = "🎵";
+        else if (arch.nombre?.endsWith('.pdf')) icono = "📑";
+        const sizeMB = (arch.tamaño / (1024 * 1024)).toFixed(2);
+        const nombreEsc = escapeHtml(arch.nombre);
+        html += `
+          <div class="file-item">
+            <span class="file-link" onclick="abrirVisor('${arch.id}', '${nombreEsc}', '${arch.tipo}')">
+              ${icono} ${nombreEsc} <span style="font-size:0.7rem; opacity:0.6;">(${sizeMB} MB)</span>
+            </span>
+            <div class="btn-group">
+              <button class="action-btn view-btn" onclick="abrirVisor('${arch.id}', '${nombreEsc}', '${arch.tipo}')">👁️ Ver</button>
+              <button class="action-btn download-btn" onclick="descargarArchivo('${arch.id}', '${nombreEsc}')">⬇️ Descargar</button>
+              <button class="action-btn delete-btn" onclick="eliminarArchivo('${categoria}', '${arch.id}')">🗑️ Eliminar</button>
+            </div>
+          </div>
+        `;
+      }
+      container.innerHTML = html;
+    } catch (err) {
+      console.error(err);
+      container.innerHTML = `<p style="color:red;">Error al cargar archivos</p>`;
+    }
+  }
+
+  function escapeHtml(str) {
+    if (!str) return '';
+    return str.replace(/[&<>]/g, m => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[m]));
+  }
+
+  // Inicializar todas las categorías
+  const categorias = ['audiovisuales', 'imagenes', 'textos', 'audios'];
+  async function iniciar() {
+    await abrirDB();
+    for (const cat of categorias) {
+      await cargarLista(cat);
+    }
+  }
+  iniciar();
+
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') cerrarModal(); });
+  window.onclick = (e) => { const modal = document.getElementById('fileModal'); if (e.target === modal) cerrarModal(); };
+</script>
 
 </body>
 </html>
