@@ -3,13 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
 <title>Lucerna · Proyecto Final</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
 
 <style>
-
 :root{
   --bg:#0d1117;
   --bg-soft:#161b22;
@@ -22,30 +20,24 @@
   --line:rgba(255,255,255,.08);
   --shadow:0 10px 40px rgba(0,0,0,.45);
 }
-
 *{
   margin:0;
   padding:0;
   box-sizing:border-box;
 }
-
 body{
-  background:
-  radial-gradient(circle at top left, rgba(212,175,55,.10), transparent 30%),
-  radial-gradient(circle at bottom right, rgba(212,175,55,.08), transparent 25%),
-  var(--bg);
-
+  background:radial-gradient(circle at top left, rgba(212,175,55,.10), transparent 30%),
+              radial-gradient(circle at bottom right, rgba(212,175,55,.08), transparent 25%),
+              var(--bg);
   color:var(--text);
   font-family:'Cormorant Garamond', serif;
   overflow-x:hidden;
 }
-
 .top-line{
   width:100%;
   height:5px;
   background:linear-gradient(90deg,#5f4b17,var(--gold),#fff2b0,var(--gold),#5f4b17);
 }
-
 nav{
   width:100%;
   padding:24px 60px;
@@ -59,13 +51,11 @@ nav{
   top:0;
   z-index:50;
 }
-
 .brand h1{
   font-family:'Cinzel', serif;
   color:var(--gold-soft);
   letter-spacing:.15em;
 }
-
 .hero{
   min-height:85vh;
   position:relative;
@@ -75,58 +65,48 @@ nav{
   text-align:center;
   overflow:hidden;
 }
-
 .hero::before{
   content:'';
   position:absolute;
   inset:0;
-  background:
-  linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.7)),
-  url('https://images.unsplash.com/photo-1512820790803-83ca734da794?q=80&w=1920&auto=format&fit=crop');
+  background:linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.7)),
+              url('https://images.unsplash.com/photo-1512820790803-83ca734da794?q=80&w=1920&auto=format&fit=crop');
   background-size:cover;
   background-position:center;
 }
-
 .hero-content{
   position:relative;
   z-index:2;
   max-width:900px;
   padding:30px;
 }
-
 .hero h2{
   font-size:5rem;
   font-family:'Cinzel', serif;
 }
-
 .hero p{
   margin-top:20px;
   font-size:1.2rem;
   line-height:1.7;
 }
-
 .cards-section{
   width:min(1300px,92%);
   margin:auto;
   padding:100px 0;
 }
-
 .section-title{
   text-align:center;
   margin-bottom:60px;
 }
-
 .section-title h3{
   font-size:3rem;
   font-family:'Cinzel', serif;
 }
-
 .cards-grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
   gap:35px;
 }
-
 .category-block{
   border-radius:25px;
   overflow:hidden;
@@ -135,11 +115,9 @@ nav{
   transition:.4s;
   box-shadow:var(--shadow);
 }
-
 .category-block:hover{
   transform:translateY(-10px);
 }
-
 .card{
   position:relative;
   height:280px;
@@ -148,7 +126,6 @@ nav{
   justify-content:center;
   overflow:hidden;
 }
-
 .card::before{
   content:'';
   position:absolute;
@@ -158,72 +135,56 @@ nav{
   filter:brightness(.5);
   transition:.7s;
 }
-
 .category-block:hover .card::before{
   transform:scale(1.08);
 }
-
-/* ================= FONDOS TEMÁTICOS ================= */
-
 .comic .card::before{
   background-image:url('https://images.unsplash.com/photo-1608889175123-8ee362201f81?q=80&w=1200&auto=format&fit=crop');
 }
-
 .historieta .card::before{
   background-image:url('https://images.unsplash.com/photo-1516979187457-637abb4f9353?q=80&w=1200&auto=format&fit=crop');
 }
-
 .manga .card::before{
   background-image:url('https://images.unsplash.com/photo-1578632767115-351597cf2477?q=80&w=1200&auto=format&fit=crop');
 }
-
 .podcast .card::before{
   background-image:url('https://images.unsplash.com/photo-1478737270239-2f02b77fc618?q=80&w=1200&auto=format&fit=crop');
 }
-
 .ensayo .card::before{
   background-image:url('https://images.unsplash.com/photo-1455390582262-044cdead277a?q=80&w=1200&auto=format&fit=crop');
 }
-
 .caligramas .card::before{
   background-image:url('https://images.unsplash.com/photo-1455390582262-044cdead277a?q=80&w=1200&auto=format&fit=crop');
 }
-
 .otros .card::before{
   background-image:url('https://images.unsplash.com/photo-1493612276216-ee3925520721?q=80&w=1200&auto=format&fit=crop');
 }
-
 .card-overlay{
   position:absolute;
   inset:0;
   background:linear-gradient(rgba(0,0,0,.2), rgba(0,0,0,.8));
 }
-
 .card-body{
   position:relative;
   z-index:3;
   text-align:center;
   padding:20px;
 }
-
 .card-icon{
   font-size:3rem;
   display:block;
   margin-bottom:15px;
 }
-
 .card-label{
   display:block;
   font-size:2rem;
   font-family:'Cinzel', serif;
   margin-bottom:10px;
 }
-
 .card-description{
   line-height:1.6;
   margin-bottom:25px;
 }
-
 .upload-btn{
   border:none;
   padding:14px 24px;
@@ -233,16 +194,13 @@ nav{
   font-weight:bold;
   transition:.3s;
 }
-
 .upload-btn:hover{
   transform:translateY(-3px);
 }
-
 .file-list{
   padding:18px;
   background:rgba(0,0,0,.2);
 }
-
 .file-item{
   background:rgba(255,255,255,.04);
   padding:12px;
@@ -254,39 +212,32 @@ nav{
   gap:10px;
   flex-wrap:wrap;
 }
-
 .file-link{
   cursor:pointer;
   flex:1;
   word-break:break-word;
 }
-
 .btn-group{
   display:flex;
   gap:8px;
 }
-
 .action-btn{
   border:none;
   padding:6px 12px;
   border-radius:20px;
   cursor:pointer;
 }
-
 .view-btn{
   background:#d4af37;
 }
-
 .download-btn{
   background:#5aa9ff;
   color:white;
 }
-
 .delete-btn{
   background:#ff5c5c;
   color:white;
 }
-
 .modal{
   display:none;
   position:fixed;
@@ -296,7 +247,6 @@ nav{
   align-items:center;
   z-index:999;
 }
-
 .modal-content{
   width:90%;
   max-width:1000px;
@@ -304,59 +254,46 @@ nav{
   padding:20px;
   border-radius:25px;
 }
-
 .modal-close{
   float:right;
   font-size:2rem;
   cursor:pointer;
 }
-
 .viewer-container{
   margin-top:20px;
   text-align:center;
 }
-
 .viewer-container img,
 .viewer-container video{
   max-width:100%;
   max-height:70vh;
 }
-
 .viewer-container audio{
   width:100%;
 }
-
 .viewer-container iframe{
   width:100%;
   height:70vh;
   border:none;
 }
-
 footer{
   padding:40px;
   text-align:center;
   border-top:1px solid rgba(255,255,255,.08);
 }
-
 @media(max-width:768px){
-
   nav{
     padding:20px;
   }
-
   .hero h2{
     font-size:3rem;
   }
-
 }
-
 </style>
 </head>
-
 <body>
 
 <div class="top-line"></div>
-
 <nav>
   <div class="brand">
     <h1>LUCERNA</h1>
@@ -364,891 +301,343 @@ footer{
 </nav>
 
 <section class="hero">
-
-<div class="hero-content">
-
-<h2>Proyecto Final</h2>
-
-<p>
-Un espacio elegante para compartir expresiones creativas y almacenar archivos localmente.
-</p>
-
-</div>
-
+  <div class="hero-content">
+    <h2>Proyecto Final</h2>
+    <p>Un espacio elegante para compartir expresiones creativas y almacenar archivos localmente.</p>
+  </div>
 </section>
 
 <section class="cards-section">
-
-<div class="section-title">
-
-<h3>Categorías Creativas</h3>
-
-</div>
-
-<div class="cards-grid">
-
-<!-- COMIC -->
-
-<div class="category-block comic">
-
-<div class="card">
-
-<div class="card-overlay"></div>
-
-<div class="card-body">
-
-<span class="card-icon">💥</span>
-
-<span class="card-label">Cómic</span>
-
-<p class="card-description">
-Historias visuales y narrativas gráficas.
-</p>
-
-<button class="upload-btn" onclick="document.getElementById('inp-comic').click()">
-Subir archivo
-</button>
-
-<input type="file" id="inp-comic" accept="image/*,video/*,audio/*,.pdf,.doc,.docx,.txt"
-style="display:none"
-onchange="subirArchivo(this,'comic')" />
-
-</div>
-
-</div>
-
-<div class="file-list" id="list-comic"></div>
-
-</div>
-
-<!-- HISTORIETA -->
-
-<div class="category-block historieta">
-
-<div class="card">
-
-<div class="card-overlay"></div>
-
-<div class="card-body">
-
-<span class="card-icon">📚</span>
-
-<span class="card-label">Historieta</span>
-
-<p class="card-description">
-Narrativas ilustradas y secuenciales.
-</p>
-
-<button class="upload-btn" onclick="document.getElementById('inp-historieta').click()">
-Subir archivo
-</button>
-
-<input type="file" id="inp-historieta" accept="image/*,video/*,audio/*,.pdf,.doc,.docx,.txt"
-style="display:none"
-onchange="subirArchivo(this,'historieta')" />
-
-</div>
-
-</div>
-
-<div class="file-list" id="list-historieta"></div>
-
-</div>
-
-<!-- MANGA -->
-
-<div class="category-block manga">
-
-<div class="card">
-
-<div class="card-overlay"></div>
-
-<div class="card-body">
-
-<span class="card-icon">🎌</span>
-
-<span class="card-label">Manga</span>
-
-<p class="card-description">
-Arte y narrativa inspirada en el manga japonés.
-</p>
-
-<button class="upload-btn" onclick="document.getElementById('inp-manga').click()">
-Subir archivo
-</button>
-
-<input type="file" id="inp-manga" accept="image/*,video/*,audio/*,.pdf,.doc,.docx,.txt"
-style="display:none"
-onchange="subirArchivo(this,'manga')" />
-
-</div>
-
-</div>
-
-<div class="file-list" id="list-manga"></div>
-
-</div>
-
-<!-- PODCAST -->
-
-<div class="category-block podcast">
-
-<div class="card">
-
-<div class="card-overlay"></div>
-
-<div class="card-body">
-
-<span class="card-icon">🎙️</span>
-
-<span class="card-label">Podcast</span>
-
-<p class="card-description">
-Entrevistas, narraciones y contenido sonoro.
-</p>
-
-<button class="upload-btn" onclick="document.getElementById('inp-podcast').click()">
-Subir archivo
-</button>
-
-<input type="file" id="inp-podcast" accept="audio/*,video/*,.mp3,.wav,.ogg"
-style="display:none"
-onchange="subirArchivo(this,'podcast')" />
-
-</div>
-
-</div>
-
-<div class="file-list" id="list-podcast"></div>
-
-</div>
-
-<!-- ENSAYO -->
-
-<div class="category-block ensayo">
-
-<div class="card">
-
-<div class="card-overlay"></div>
-
-<div class="card-body">
-
-<span class="card-icon">📝</span>
-
-<span class="card-label">Ensayo</span>
-
-<p class="card-description">
-Reflexiones, análisis y escritura académica.
-</p>
-
-<button class="upload-btn" onclick="document.getElementById('inp-ensayo').click()">
-Subir archivo
-</button>
-
-<input type="file" id="inp-ensayo" accept=".pdf,.doc,.docx,.txt"
-style="display:none"
-onchange="subirArchivo(this,'ensayo')" />
-
-</div>
-
-</div>
-
-<div class="file-list" id="list-ensayo"></div>
-
-</div>
-
-<!-- CALIGRAMAS -->
-
-<div class="category-block caligramas">
-
-<div class="card">
-
-<div class="card-overlay"></div>
-
-<div class="card-body">
-
-<span class="card-icon">✒️</span>
-
-<span class="card-label">Caligramas</span>
-
-<p class="card-description">
-Poesía visual y composiciones tipográficas.
-</p>
-
-<button class="upload-btn" onclick="document.getElementById('inp-caligramas').click()">
-Subir archivo
-</button>
-
-<input type="file" id="inp-caligramas" accept="image/*,.pdf,.doc,.docx,.txt"
-style="display:none"
-onchange="subirArchivo(this,'caligramas')" />
-
-</div>
-
-</div>
-
-<div class="file-list" id="list-caligramas"></div>
-
-</div>
-
-<!-- OTROS -->
-
-<div class="category-block otros">
-
-<div class="card">
-
-<div class="card-overlay"></div>
-
-<div class="card-body">
-
-<span class="card-icon">✨</span>
-
-<span class="card-label">Otros</span>
-
-<p class="card-description">
-Contenido creativo adicional.
-</p>
-
-<button class="upload-btn" onclick="document.getElementById('inp-otros').click()">
-Subir archivo
-</button>
-
-<input type="file" id="inp-otros" accept="*/*"
-style="display:none"
-onchange="subirArchivo(this,'otros')" />
-
-</div>
-
-</div>
-
-<div class="file-list" id="list-otros"></div>
-
-</div>
-
-</div>
-
+  <div class="section-title">
+    <h3>Categorías Creativas</h3>
+  </div>
+  <div class="cards-grid">
+    <!-- COMIC -->
+    <div class="category-block comic">
+      <div class="card">
+        <div class="card-overlay"></div>
+        <div class="card-body">
+          <span class="card-icon">💥</span>
+          <span class="card-label">Cómic</span>
+          <p class="card-description">Historias visuales y narrativas gráficas.</p>
+          <button class="upload-btn" onclick="document.getElementById('inp-comic').click()">Subir archivo</button>
+          <input type="file" id="inp-comic" accept="image/*,video/*,audio/*,.pdf,.doc,.docx,.txt" style="display:none" onchange="subirArchivo(this,'comic')" />
+        </div>
+      </div>
+      <div class="file-list" id="list-comic"></div>
+    </div>
+    <!-- HISTORIETA -->
+    <div class="category-block historieta">
+      <div class="card">
+        <div class="card-overlay"></div>
+        <div class="card-body">
+          <span class="card-icon">📚</span>
+          <span class="card-label">Historieta</span>
+          <p class="card-description">Narrativas ilustradas y secuenciales.</p>
+          <button class="upload-btn" onclick="document.getElementById('inp-historieta').click()">Subir archivo</button>
+          <input type="file" id="inp-historieta" accept="image/*,video/*,audio/*,.pdf,.doc,.docx,.txt" style="display:none" onchange="subirArchivo(this,'historieta')" />
+        </div>
+      </div>
+      <div class="file-list" id="list-historieta"></div>
+    </div>
+    <!-- MANGA -->
+    <div class="category-block manga">
+      <div class="card">
+        <div class="card-overlay"></div>
+        <div class="card-body">
+          <span class="card-icon">🎌</span>
+          <span class="card-label">Manga</span>
+          <p class="card-description">Arte y narrativa inspirada en el manga japonés.</p>
+          <button class="upload-btn" onclick="document.getElementById('inp-manga').click()">Subir archivo</button>
+          <input type="file" id="inp-manga" accept="image/*,video/*,audio/*,.pdf,.doc,.docx,.txt" style="display:none" onchange="subirArchivo(this,'manga')" />
+        </div>
+      </div>
+      <div class="file-list" id="list-manga"></div>
+    </div>
+    <!-- PODCAST -->
+    <div class="category-block podcast">
+      <div class="card">
+        <div class="card-overlay"></div>
+        <div class="card-body">
+          <span class="card-icon">🎙️</span>
+          <span class="card-label">Podcast</span>
+          <p class="card-description">Entrevistas, narraciones y contenido sonoro.</p>
+          <button class="upload-btn" onclick="document.getElementById('inp-podcast').click()">Subir archivo</button>
+          <input type="file" id="inp-podcast" accept="audio/*,video/*,.mp3,.wav,.ogg" style="display:none" onchange="subirArchivo(this,'podcast')" />
+        </div>
+      </div>
+      <div class="file-list" id="list-podcast"></div>
+    </div>
+    <!-- ENSAYO -->
+    <div class="category-block ensayo">
+      <div class="card">
+        <div class="card-overlay"></div>
+        <div class="card-body">
+          <span class="card-icon">📝</span>
+          <span class="card-label">Ensayo</span>
+          <p class="card-description">Reflexiones, análisis y escritura académica.</p>
+          <button class="upload-btn" onclick="document.getElementById('inp-ensayo').click()">Subir archivo</button>
+          <input type="file" id="inp-ensayo" accept=".pdf,.doc,.docx,.txt" style="display:none" onchange="subirArchivo(this,'ensayo')" />
+        </div>
+      </div>
+      <div class="file-list" id="list-ensayo"></div>
+    </div>
+    <!-- CALIGRAMAS -->
+    <div class="category-block caligramas">
+      <div class="card">
+        <div class="card-overlay"></div>
+        <div class="card-body">
+          <span class="card-icon">✒️</span>
+          <span class="card-label">Caligramas</span>
+          <p class="card-description">Poesía visual y composiciones tipográficas.</p>
+          <button class="upload-btn" onclick="document.getElementById('inp-caligramas').click()">Subir archivo</button>
+          <input type="file" id="inp-caligramas" accept="image/*,.pdf,.doc,.docx,.txt" style="display:none" onchange="subirArchivo(this,'caligramas')" />
+        </div>
+      </div>
+      <div class="file-list" id="list-caligramas"></div>
+    </div>
+    <!-- OTROS -->
+    <div class="category-block otros">
+      <div class="card">
+        <div class="card-overlay"></div>
+        <div class="card-body">
+          <span class="card-icon">✨</span>
+          <span class="card-label">Otros</span>
+          <p class="card-description">Contenido creativo adicional.</p>
+          <button class="upload-btn" onclick="document.getElementById('inp-otros').click()">Subir archivo</button>
+          <input type="file" id="inp-otros" accept="*/*" style="display:none" onchange="subirArchivo(this,'otros')" />
+        </div>
+      </div>
+      <div class="file-list" id="list-otros"></div>
+    </div>
+  </div>
 </section>
 
 <footer>
-
-<h3>LUCERNA</h3>
-
-<p>Proyecto Final · Literatura Emergente</p>
-
+  <h3>LUCERNA</h3>
+  <p>Proyecto Final · Literatura Emergente</p>
 </footer>
 
 <!-- MODAL -->
-
 <div id="fileModal" class="modal">
-
-<div class="modal-content">
-
-<span class="modal-close" onclick="cerrarModal()">&times;</span>
-
-<div id="modalViewer" class="viewer-container"></div>
-
-</div>
-
+  <div class="modal-content">
+    <span class="modal-close" onclick="cerrarModal()">&times;</span>
+    <div id="modalViewer" class="viewer-container"></div>
+  </div>
 </div>
 
 <script>
-
+// ================= CONFIGURACIÓN =================
 const DB_NAME = 'LucernaDB';
-const DB_VERSION = 1;
-const STORE_NAME = 'archivos';
-
+const STORE_NAME = 'archivos_v2';   // nuevo store para el formato ArrayBuffer
 let db;
 
-/* ================= ABRIR DB ================= */
-
-function abrirDB(){
-
-  return new Promise((resolve,reject)=>{
-
-    const request = indexedDB.open(DB_NAME, DB_VERSION);
-
+// ================= ABRIR / CREAR DB =================
+function abrirDB() {
+  return new Promise((resolve, reject) => {
+    const request = indexedDB.open(DB_NAME, 2); // incrementar versión
     request.onerror = () => reject(request.error);
-
-    request.onsuccess = () => {
-
-      db = request.result;
-      resolve(db);
-
-    };
-
     request.onupgradeneeded = (e) => {
-
-      db = e.target.result;
-
-      if(!db.objectStoreNames.contains(STORE_NAME)){
-
-        db.createObjectStore(STORE_NAME,{
-          keyPath:'id'
-        });
-
+      const database = e.target.result;
+      if (!database.objectStoreNames.contains(STORE_NAME)) {
+        // clave: id, almacenaremos objetos con buffer, nombre, tipo, categoria
+        database.createObjectStore(STORE_NAME, { keyPath: 'id' });
       }
-
+      // Si existía la versión anterior, se puede ignorar
     };
-
-  });
-
-}
-
-/* ================= GUARDAR ================= */
-
-async function guardarArchivo(file,categoria){
-
-  const id = Date.now().toString();
-
-  const buffer = await file.arrayBuffer();
-
-  const archivo = {
-
-    id:id,
-    categoria:categoria,
-    nombre:file.name,
-    tipo:file.type,
-    tamaño:file.size,
-    contenido:buffer
-
-  };
-
-  const tx = db.transaction(STORE_NAME,'readwrite');
-
-  tx.objectStore(STORE_NAME).add(archivo);
-
-}
-
-/* ================= OBTENER ================= */
-
-async function obtenerArchivos(categoria){
-
-  return new Promise((resolve)=>{
-
-    const tx = db.transaction(STORE_NAME,'readonly');
-
-    const request = tx.objectStore(STORE_NAME).getAll();
-
-    request.onsuccess = ()=>{
-
-      const filtrados = request.result.filter(
-        a => a.categoria === categoria
-      );
-
-      resolve(filtrados);
-
+    request.onsuccess = (e) => {
+      db = e.target.result;
+      resolve(db);
     };
-
   });
-
 }
 
-/* ================= ELIMINAR ================= */
-
-async function eliminarArchivo(id){
-
-  const tx = db.transaction(STORE_NAME,'readwrite');
-
-  tx.objectStore(STORE_NAME).delete(id);
-
-}
-
-/* ================= SUBIR ================= */
-
-async function subirArchivo(input,categoria){
-
-  try{
-
-    const file = input.files[0];
-
-    if(!file) return;
-
-    await guardarArchivo(file,categoria);
-
-    await cargarLista(categoria);
-
-    input.value = '';
-
-  }
-
-  catch(err){
-
-    console.error(err);
-
-    alert('Error al subir archivo');
-
-  }
-
-}
-
-/* ================= CARGAR LISTA ================= */
-
-async function cargarLista(categoria){
-
-  const archivos = await obtenerArchivos(categoria);
-
-  const container = document.getElementById('list-'+categoria);
-
-  container.innerHTML = '';
-
-  if(archivos.length === 0){
-
-    container.innerHTML = `
-      <p style="opacity:.5;text-align:center;">
-      Sin archivos
-      </p>
-    `;
-
-    return;
-
-  }
-
-  archivos.forEach(arch=>{
-
-    const div = document.createElement('div');
-
-    div.className='file-item';
-
-    div.innerHTML = `
-
-      <span class="file-link">
-      ${arch.nombre}
-      </span>
-
-      <div class="btn-group">
-
-        <button class="action-btn view-btn"
-        onclick="verArchivo('${arch.id}')">
-        Ver
-        </button>
-
-        <button class="action-btn download-btn"
-        onclick="descargarArchivo('${arch.id}')">
-        Descargar
-        </button>
-
-        <button class="action-btn delete-btn"
-        onclick="borrarArchivo('${arch.id}','${categoria}')">
-        Borrar
-        </button>
-
-      </div>
-
-    `;
-
-    container.appendChild(div);
-
+// ================= LEER ARCHIVO COMO ARRAYBUFFER =================
+function leerArchivoComoBuffer(file) {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = () => resolve(reader.result); // ArrayBuffer
+    reader.onerror = () => reject(reader.error);
+    reader.readAsArrayBuffer(file);
   });
-
 }
 
-/* ================= VER ================= */
-
-async function verArchivo(id){
-
-  const tx = db.transaction(STORE_NAME,'readonly');
-
-  const request = tx.objectStore(STORE_NAME).get(id);
-
-  request.onsuccess = ()=>{
-
-    const arch = request.result;
-
-    const blob = new Blob(
-      [arch.contenido],
-      {type:arch.tipo}
-    );
-
-    const url = URL.createObjectURL(blob);
-
-    const viewer = document.getElementById('modalViewer');
-
-    viewer.innerHTML='';
-
-    if(arch.tipo.startsWith('image/')){
-
-      viewer.innerHTML = `
-        <img src="${url}">
-      `;
-
-    }
-
-    else if(arch.tipo.startsWith('video/')){
-
-      viewer.innerHTML = `
-        <video controls src="${url}"></video>
-      `;
-
-    }
-
-    else if(arch.tipo.startsWith('audio/')){
-
-      viewer.innerHTML = `
-        <audio controls src="${url}"></audio>
-      `;
-
-    }
-
-    else{
-
-      viewer.innerHTML = `
-        <iframe src="${url}"
-        style="width:100%;height:70vh;border:none;">
-        </iframe>
-      `;
-
-    }
-
-    document.getElementById('fileModal').style.display='flex';
-
-  };
-
-}
-
-/* ================= DESCARGAR ================= */
-
-async function descargarArchivo(id){
-
-  const tx = db.transaction(STORE_NAME,'readonly');
-
-  const request = tx.objectStore(STORE_NAME).get(id);
-
-  request.onsuccess = ()=>{
-
-    const arch = request.result;
-
-    const blob = new Blob(
-      [arch.contenido],
-      {type:arch.tipo}
-    );
-
-    const url = URL.createObjectURL(blob);
-
-    const a = document.createElement('a');
-
-    a.href = url;
-
-    a.download = arch.nombre;
-
-    a.click();
-
-  };
-
-}
-
-/* ================= BORRAR ================= */
-
-async function borrarArchivo(id,categoria){
-
-  await eliminarArchivo(id);
-
-  cargarLista(categoria);
-
-}
-
-/* ================= MODAL ================= */
-
-function cerrarModal(){
-
-  document.getElementById('fileModal').style.display='none';
-
-}
-
-/* ================= INICIAR ================= */
-
-const categorias = [
-
-  'comic',
-  'historieta',
-  'manga',
-  'podcast',
-  'ensayo',
-  'caligramas',
-  'otros'
-
-];
-
-abrirDB().then(()=>{
-
-  categorias.forEach(cat=>{
-
-    cargarLista(cat);
-
-  });
-
-});
-
-</script>
-/* ================= GUARDAR ================= */
-
-async function guardarArchivo(file,categoria){
-
-  const id = Date.now() + "_" + Math.random();
-
+// ================= GUARDAR (con buffer) =================
+async function guardarArchivo(file, categoria) {
+  const id = Date.now() + "_" + Math.random().toString(36).substr(2, 8);
+  const buffer = await leerArchivoComoBuffer(file);
   const data = {
-    id:id,
-    categoria:categoria,
-    nombre:file.name,
-    tipo:file.type,
-    contenido:file
+    id: id,
+    categoria: categoria,
+    nombre: file.name,
+    tipo: file.type,
+    buffer: buffer   // <-- ArrayBuffer
   };
-
-  return new Promise((resolve,reject)=>{
-
-    const tx = db.transaction(STORE_NAME,'readwrite');
-
+  return new Promise((resolve, reject) => {
+    const tx = db.transaction(STORE_NAME, 'readwrite');
     const store = tx.objectStore(STORE_NAME);
-
     const req = store.add(data);
-
-    req.onsuccess = ()=> resolve();
-
-    req.onerror = ()=> reject(req.error);
-
+    req.onsuccess = () => resolve();
+    req.onerror = (err) => reject(err);
   });
-
 }
 
-/* ================= OBTENER ================= */
-
-async function obtenerArchivos(categoria){
-
-  return new Promise((resolve,reject)=>{
-
-    const tx = db.transaction(STORE_NAME,'readonly');
-
+// ================= OBTENER TODOS LOS ARCHIVOS POR CATEGORÍA =================
+async function obtenerArchivos(categoria) {
+  return new Promise((resolve, reject) => {
+    const tx = db.transaction(STORE_NAME, 'readonly');
     const store = tx.objectStore(STORE_NAME);
-
     const req = store.getAll();
-
-    req.onsuccess = ()=>{
-
-      const filtrados = req.result.filter(
-        a => a.categoria === categoria
-      );
-
+    req.onsuccess = () => {
+      const todos = req.result;
+      const filtrados = todos.filter(a => a.categoria === categoria);
       resolve(filtrados);
-
     };
-
-    req.onerror = ()=> reject(req.error);
-
+    req.onerror = () => reject(req.error);
   });
-
 }
 
-/* ================= ELIMINAR ================= */
-
-async function eliminarArchivo(id){
-
-  return new Promise((resolve,reject)=>{
-
-    const tx = db.transaction(STORE_NAME,'readwrite');
-
+// ================= ELIMINAR =================
+async function eliminarArchivo(id) {
+  return new Promise((resolve, reject) => {
+    const tx = db.transaction(STORE_NAME, 'readwrite');
     const store = tx.objectStore(STORE_NAME);
-
     const req = store.delete(id);
-
-    req.onsuccess = ()=> resolve();
-
-    req.onerror = ()=> reject(req.error);
-
+    req.onsuccess = () => resolve();
+    req.onerror = () => reject(req.error);
   });
-
 }
 
-/* ================= SUBIR ================= */
-
-async function subirArchivo(input,categoria){
-
-  const file = input.files[0];
-
-  if(!file) return;
-
-  try{
-
-    await guardarArchivo(file,categoria);
-
+// ================= SUBIR (evento desde input) =================
+window.subirArchivo = async function(inputEl, categoria) {
+  const file = inputEl.files[0];
+  if (!file) return;
+  try {
+    await guardarArchivo(file, categoria);
     await cargarLista(categoria);
-
-    input.value = '';
-
-  }catch(err){
-
-    alert("Error al subir archivo");
-
-    console.error(err);
-
+    inputEl.value = ''; // limpiar input
+  } catch (err) {
+    console.error("Error detallado al subir:", err);
+    alert("No se pudo subir el archivo: " + (err.message || err.toString()));
   }
+};
 
-}
-
-/* ================= CARGAR LISTA ================= */
-
-async function cargarLista(categoria){
-
+// ================= CARGAR LISTA VISUAL =================
+async function cargarLista(categoria) {
   const archivos = await obtenerArchivos(categoria);
-
-  const container = document.getElementById('list-'+categoria);
-
-  container.innerHTML='';
-
-  archivos.forEach(arch=>{
-
+  const container = document.getElementById('list-' + categoria);
+  if (!container) return;
+  container.innerHTML = '';
+  archivos.forEach(arch => {
     const div = document.createElement('div');
-
-    div.className='file-item';
-
+    div.className = 'file-item';
     div.innerHTML = `
-
-      <span class="file-link">${arch.nombre}</span>
-
+      <span class="file-link">${escapeHtml(arch.nombre)}</span>
       <div class="btn-group">
-
-      <button class="action-btn view-btn"
-      onclick="verArchivo('${arch.id}')">
-      Ver
-      </button>
-
-      <button class="action-btn download-btn"
-      onclick="descargarArchivo('${arch.id}')">
-      Descargar
-      </button>
-
-      <button class="action-btn delete-btn"
-      onclick="borrarArchivo('${arch.id}','${categoria}')">
-      Borrar
-      </button>
-
+        <button class="action-btn view-btn" onclick="verArchivo('${arch.id}')">Ver</button>
+        <button class="action-btn download-btn" onclick="descargarArchivo('${arch.id}')">Descargar</button>
+        <button class="action-btn delete-btn" onclick="borrarArchivo('${arch.id}','${categoria}')">Borrar</button>
       </div>
-
     `;
-
     container.appendChild(div);
-
   });
-
 }
 
-/* ================= VER ================= */
+// Helper para evitar XSS en nombres
+function escapeHtml(str) {
+  return str.replace(/[&<>]/g, function(m) {
+    if (m === '&') return '&amp;';
+    if (m === '<') return '&lt;';
+    if (m === '>') return '&gt;';
+    return m;
+  });
+}
 
-async function verArchivo(id){
-
-  const tx = db.transaction(STORE_NAME,'readonly');
-
-  const req = tx.objectStore(STORE_NAME).get(id);
-
-  req.onsuccess = ()=>{
-
+// ================= VER ARCHIVO (MODAL) =================
+window.verArchivo = async function(id) {
+  const tx = db.transaction(STORE_NAME, 'readonly');
+  const store = tx.objectStore(STORE_NAME);
+  const req = store.get(id);
+  req.onsuccess = () => {
     const arch = req.result;
-
-    const url = URL.createObjectURL(arch.contenido);
-
+    if (!arch) return;
+    // Reconstruir blob a partir del buffer
+    const blob = new Blob([arch.buffer], { type: arch.tipo });
+    const url = URL.createObjectURL(blob);
     const viewer = document.getElementById('modalViewer');
-
-    viewer.innerHTML='';
-
-    if(arch.tipo.startsWith('image/')){
-
-      viewer.innerHTML=`<img src="${url}">`;
-
+    viewer.innerHTML = '';
+    if (arch.tipo.startsWith('image/')) {
+      viewer.innerHTML = `<img src="${url}" alt="${arch.nombre}">`;
+    } else if (arch.tipo.startsWith('video/')) {
+      viewer.innerHTML = `<video controls src="${url}"></video>`;
+    } else if (arch.tipo.startsWith('audio/')) {
+      viewer.innerHTML = `<audio controls src="${url}"></audio>`;
+    } else {
+      // Para PDF, DOC, TXT, etc. se usa iframe
+      viewer.innerHTML = `<iframe src="${url}"></iframe>`;
     }
-
-    else if(arch.tipo.startsWith('video/')){
-
-      viewer.innerHTML=`<video controls src="${url}"></video>`;
-
-    }
-
-    else if(arch.tipo.startsWith('audio/')){
-
-      viewer.innerHTML=`<audio controls src="${url}"></audio>`;
-
-    }
-
-    else{
-
-      viewer.innerHTML=`<iframe src="${url}"></iframe>`;
-
-    }
-
-    document.getElementById('fileModal').style.display='flex';
-
+    document.getElementById('fileModal').style.display = 'flex';
+    // Opcional: liberar URL cuando se cierre el modal, pero se hará al cerrar
   };
+};
 
-}
+window.cerrarModal = function() {
+  const modal = document.getElementById('fileModal');
+  const viewer = document.getElementById('modalViewer');
+  // Liberar posibles URLs creadas
+  const iframe = viewer.querySelector('iframe');
+  const img = viewer.querySelector('img');
+  const video = viewer.querySelector('video');
+  const audio = viewer.querySelector('audio');
+  if (iframe && iframe.src) URL.revokeObjectURL(iframe.src);
+  if (img && img.src) URL.revokeObjectURL(img.src);
+  if (video && video.src) URL.revokeObjectURL(video.src);
+  if (audio && audio.src) URL.revokeObjectURL(audio.src);
+  modal.style.display = 'none';
+  viewer.innerHTML = '';
+};
 
-/* ================= CERRAR MODAL ================= */
-
-function cerrarModal(){
-
-  document.getElementById('fileModal').style.display='none';
-
-}
-
-/* ================= DESCARGAR ================= */
-
-async function descargarArchivo(id){
-
-  const tx = db.transaction(STORE_NAME,'readonly');
-
-  const req = tx.objectStore(STORE_NAME).get(id);
-
-  req.onsuccess = ()=>{
-
+// ================= DESCARGAR =================
+window.descargarArchivo = async function(id) {
+  const tx = db.transaction(STORE_NAME, 'readonly');
+  const store = tx.objectStore(STORE_NAME);
+  const req = store.get(id);
+  req.onsuccess = () => {
     const arch = req.result;
-
-    const url = URL.createObjectURL(arch.contenido);
-
+    const blob = new Blob([arch.buffer], { type: arch.tipo });
+    const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
-
     a.href = url;
-
     a.download = arch.nombre;
-
     document.body.appendChild(a);
-
     a.click();
-
     document.body.removeChild(a);
-
+    setTimeout(() => URL.revokeObjectURL(url), 100);
   };
+};
 
-}
+// ================= BORRAR =================
+window.borrarArchivo = async function(id, categoria) {
+  if (confirm("¿Eliminar este archivo permanentemente?")) {
+    await eliminarArchivo(id);
+    cargarLista(categoria);
+  }
+};
 
-/* ================= BORRAR ================= */
-
-async function borrarArchivo(id,categoria){
-
-  await eliminarArchivo(id);
-
-  cargarLista(categoria);
-
-}
-
-/* ================= INICIAR ================= */
-
-const categorias = [
-'comic',
-'historieta',
-'manga',
-'podcast',
-'ensayo',
-'caligramas',
-'otros'
-];
-
-abrirDB().then(()=>{
-
-  categorias.forEach(c=>{
-
-    cargarLista(c);
-
-  });
-
+// ================= INICIALIZAR AL CARGAR EL DOM =================
+document.addEventListener('DOMContentLoaded', async () => {
+  try {
+    await abrirDB();
+    const categorias = ['comic', 'historieta', 'manga', 'podcast', 'ensayo', 'caligramas', 'otros'];
+    for (const cat of categorias) {
+      await cargarLista(cat);
+    }
+    console.log("✅ Lucerna lista - IndexedDB funcionando correctamente");
+  } catch (err) {
+    console.error("❌ Error al inicializar IndexedDB:", err);
+    alert("No se pudo inicializar el almacenamiento local. Revisa la consola (F12).");
+  }
 });
-
 </script>
-
 </body>
 </html>
