@@ -163,7 +163,7 @@ nav{
   transform:scale(1.08);
 }
 
-/* ================= FONDOS TEMÁTICOS ================= */
+/* ================= FONDOS ================= */
 
 .comic .card::before{
   background-image:url('https://images.unsplash.com/photo-1514329926535-7f6db2f4b341?q=80&w=1200&auto=format&fit=crop');
@@ -258,6 +258,7 @@ nav{
 .file-link{
   cursor:pointer;
   flex:1;
+  word-break:break-word;
 }
 
 .btn-group{
@@ -408,7 +409,8 @@ Historias visuales y narrativas gráficas.
 Subir archivo
 </button>
 
-<input type="file" id="inp-comic" style="display:none"
+<input type="file" id="inp-comic" accept="image/*,video/*,audio/*,.pdf,.doc,.docx,.txt"
+style="display:none"
 onchange="subirArchivo(this,'comic')" />
 
 </div>
@@ -441,7 +443,8 @@ Narrativas ilustradas y secuenciales.
 Subir archivo
 </button>
 
-<input type="file" id="inp-historieta" style="display:none"
+<input type="file" id="inp-historieta" accept="image/*,video/*,audio/*,.pdf,.doc,.docx,.txt"
+style="display:none"
 onchange="subirArchivo(this,'historieta')" />
 
 </div>
@@ -474,7 +477,8 @@ Arte y narrativa inspirada en el manga japonés.
 Subir archivo
 </button>
 
-<input type="file" id="inp-manga" style="display:none"
+<input type="file" id="inp-manga" accept="image/*,video/*,audio/*,.pdf,.doc,.docx,.txt"
+style="display:none"
 onchange="subirArchivo(this,'manga')" />
 
 </div>
@@ -507,7 +511,8 @@ Entrevistas, narraciones y contenido sonoro.
 Subir archivo
 </button>
 
-<input type="file" id="inp-podcast" style="display:none"
+<input type="file" id="inp-podcast" accept="audio/*,video/*,.mp3,.wav,.ogg"
+style="display:none"
 onchange="subirArchivo(this,'podcast')" />
 
 </div>
@@ -540,7 +545,8 @@ Reflexiones, análisis y escritura académica.
 Subir archivo
 </button>
 
-<input type="file" id="inp-ensayo" style="display:none"
+<input type="file" id="inp-ensayo" accept=".pdf,.doc,.docx,.txt"
+style="display:none"
 onchange="subirArchivo(this,'ensayo')" />
 
 </div>
@@ -573,7 +579,8 @@ Poesía visual y composiciones tipográficas.
 Subir archivo
 </button>
 
-<input type="file" id="inp-caligramas" style="display:none"
+<input type="file" id="inp-caligramas" accept="image/*,.pdf,.doc,.docx,.txt"
+style="display:none"
 onchange="subirArchivo(this,'caligramas')" />
 
 </div>
@@ -606,7 +613,8 @@ Contenido creativo adicional.
 Subir archivo
 </button>
 
-<input type="file" id="inp-otros" style="display:none"
+<input type="file" id="inp-otros" accept="*"
+style="display:none"
 onchange="subirArchivo(this,'otros')" />
 
 </div>
@@ -644,8 +652,6 @@ onchange="subirArchivo(this,'otros')" />
 </div>
 
 <script>
-
-/* ================= INDEXED DB ================= */
 
 const DB_NAME = 'LucernaDB';
 const STORE_NAME = 'archivos';
@@ -688,13 +694,10 @@ function abrirDB(){
 
 }
 
-/* ================= GUARDAR ARCHIVO ================= */
-
 async function guardarArchivo(file,categoria){
 
   const id = Date.now().toString();
 
-  // CONVERTIR A ARRAY BUFFER
   const buffer = await file.arrayBuffer();
 
   const data = {
@@ -710,8 +713,6 @@ async function guardarArchivo(file,categoria){
   tx.objectStore(STORE_NAME).add(data);
 
 }
-
-/* ================= OBTENER ================= */
 
 async function obtenerArchivos(categoria){
 
@@ -733,8 +734,6 @@ async function obtenerArchivos(categoria){
 
 }
 
-/* ================= ELIMINAR ================= */
-
 async function eliminarArchivo(id){
 
   const tx = db.transaction(STORE_NAME,'readwrite');
@@ -742,8 +741,6 @@ async function eliminarArchivo(id){
   tx.objectStore(STORE_NAME).delete(id);
 
 }
-
-/* ================= SUBIR ================= */
 
 async function subirArchivo(input,categoria){
 
@@ -756,8 +753,6 @@ async function subirArchivo(input,categoria){
   cargarLista(categoria);
 
 }
-
-/* ================= CARGAR LISTA ================= */
 
 async function cargarLista(categoria){
 
@@ -804,8 +799,6 @@ async function cargarLista(categoria){
 
 }
 
-/* ================= VER ================= */
-
 async function verArchivo(id){
 
   const tx = db.transaction(STORE_NAME,'readonly');
@@ -816,7 +809,6 @@ async function verArchivo(id){
 
     const arch = req.result;
 
-    // CREAR BLOB CORRECTAMENTE
     const blob = new Blob([arch.contenido], {
       type: arch.tipo
     });
@@ -857,15 +849,11 @@ async function verArchivo(id){
 
 }
 
-/* ================= CERRAR ================= */
-
 function cerrarModal(){
 
   document.getElementById('fileModal').style.display='none';
 
 }
-
-/* ================= DESCARGAR ================= */
 
 async function descargarArchivo(id){
 
@@ -877,7 +865,6 @@ async function descargarArchivo(id){
 
     const arch = req.result;
 
-    // CREAR BLOB CORRECTAMENTE
     const blob = new Blob([arch.contenido], {
       type: arch.tipo
     });
@@ -902,8 +889,6 @@ async function descargarArchivo(id){
 
 }
 
-/* ================= BORRAR ================= */
-
 async function borrarArchivo(id,categoria){
 
   await eliminarArchivo(id);
@@ -911,8 +896,6 @@ async function borrarArchivo(id,categoria){
   cargarLista(categoria);
 
 }
-
-/* ================= CATEGORÍAS ================= */
 
 const categorias = [
 'comic',
@@ -923,8 +906,6 @@ const categorias = [
 'caligramas',
 'otros'
 ];
-
-/* ================= INICIAR ================= */
 
 abrirDB().then(()=>{
 
