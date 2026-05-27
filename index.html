@@ -18,11 +18,7 @@
   --line:rgba(255,255,255,.08);
   --shadow:0 10px 40px rgba(0,0,0,.45);
 }
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
+*{margin:0;padding:0;box-sizing:border-box;}
 body{
   background:
   radial-gradient(circle at top left, rgba(212,175,55,.10), transparent 30%),
@@ -32,11 +28,7 @@ body{
   font-family:'Cormorant Garamond', serif;
   overflow-x:hidden;
 }
-.top-line{
-  width:100%;
-  height:5px;
-  background:linear-gradient(90deg,#5f4b17,var(--gold),#fff2b0,var(--gold),#5f4b17);
-}
+.top-line{width:100%;height:5px;background:linear-gradient(90deg,#5f4b17,var(--gold),#fff2b0,var(--gold),#5f4b17);}
 nav{
   width:100%;
   padding:24px 60px;
@@ -50,11 +42,7 @@ nav{
   top:0;
   z-index:50;
 }
-.brand h1{
-  font-family:'Cinzel', serif;
-  color:var(--gold-soft);
-  letter-spacing:.15em;
-}
+.brand h1{font-family:'Cinzel', serif;color:var(--gold-soft);letter-spacing:.15em;}
 .hero{
   min-height:85vh;
   position:relative;
@@ -74,39 +62,13 @@ nav{
   background-size:cover;
   background-position:center;
 }
-.hero-content{
-  position:relative;
-  z-index:2;
-  max-width:900px;
-  padding:30px;
-}
-.hero h2{
-  font-size:5rem;
-  font-family:'Cinzel', serif;
-}
-.hero p{
-  margin-top:20px;
-  font-size:1.2rem;
-  line-height:1.7;
-}
-.cards-section{
-  width:min(1300px,92%);
-  margin:auto;
-  padding:100px 0;
-}
-.section-title{
-  text-align:center;
-  margin-bottom:60px;
-}
-.section-title h3{
-  font-size:3rem;
-  font-family:'Cinzel', serif;
-}
-.cards-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-  gap:35px;
-}
+.hero-content{position:relative;z-index:2;max-width:900px;padding:30px;}
+.hero h2{font-size:5rem;font-family:'Cinzel', serif;}
+.hero p{margin-top:20px;font-size:1.2rem;line-height:1.7;}
+.cards-section{width:min(1300px,92%);margin:auto;padding:100px 0;}
+.section-title{text-align:center;margin-bottom:60px;}
+.section-title h3{font-size:3rem;font-family:'Cinzel', serif;}
+.cards-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:35px;}
 .category-block{
   border-radius:25px;
   overflow:hidden;
@@ -115,9 +77,7 @@ nav{
   transition:.4s;
   box-shadow:var(--shadow);
 }
-.category-block:hover{
-  transform:translateY(-10px);
-}
+.category-block:hover{transform:translateY(-10px);}
 .card{
   position:relative;
   height:280px;
@@ -135,45 +95,19 @@ nav{
   filter:brightness(.5);
   transition:.7s;
 }
-.category-block:hover .card::before{
-  transform:scale(1.08);
-}
-
-/* ================= FONDOS TEMÁTICOS ================= */
-.comic .card::before{ background-image:url('https://images.unsplash.com/photo-1608889175123-8ee362201f81?q=80&w=1200&auto=format&fit=crop'); }
-.historieta .card::before{ background-image:url('https://images.unsplash.com/photo-1516979187457-637abb4f9353?q=80&w=1200&auto=format&fit=crop'); }
-.manga .card::before{ background-image:url('https://images.unsplash.com/photo-1578632767115-351597cf2477?q=80&w=1200&auto=format&fit=crop'); }
-.podcast .card::before{ background-image:url('https://images.unsplash.com/photo-1478737270239-2f02b77fc618?q=80&w=1200&auto=format&fit=crop'); }
-.ensayo .card::before{ background-image:url('https://images.unsplash.com/photo-1455390582262-044cdead277a?q=80&w=1200&auto=format&fit=crop'); }
-.caligramas .card::before{ background-image:url('https://images.unsplash.com/photo-1455390582262-044cdead277a?q=80&w=1200&auto=format&fit=crop'); }
-.otros .card::before{ background-image:url('https://images.unsplash.com/photo-1493612276216-ee3925520721?q=80&w=1200&auto=format&fit=crop'); }
-
-.card-overlay{
-  position:absolute;
-  inset:0;
-  background:linear-gradient(rgba(0,0,0,.2), rgba(0,0,0,.8));
-}
-.card-body{
-  position:relative;
-  z-index:3;
-  text-align:center;
-  padding:20px;
-}
-.card-icon{
-  font-size:3rem;
-  display:block;
-  margin-bottom:15px;
-}
-.card-label{
-  display:block;
-  font-size:2rem;
-  font-family:'Cinzel', serif;
-  margin-bottom:10px;
-}
-.card-description{
-  line-height:1.6;
-  margin-bottom:25px;
-}
+.category-block:hover .card::before{transform:scale(1.08);}
+.comic .card::before{background-image:url('https://images.unsplash.com/photo-1608889175123-8ee362201f81?q=80&w=1200&auto=format&fit=crop');}
+.historieta .card::before{background-image:url('https://images.unsplash.com/photo-1516979187457-637abb4f9353?q=80&w=1200&auto=format&fit=crop');}
+.manga .card::before{background-image:url('https://images.unsplash.com/photo-1578632767115-351597cf2477?q=80&w=1200&auto=format&fit=crop');}
+.podcast .card::before{background-image:url('https://images.unsplash.com/photo-1478737270239-2f02b77fc618?q=80&w=1200&auto=format&fit=crop');}
+.ensayo .card::before{background-image:url('https://images.unsplash.com/photo-1455390582262-044cdead277a?q=80&w=1200&auto=format&fit=crop');}
+.caligramas .card::before{background-image:url('https://images.unsplash.com/photo-1455390582262-044cdead277a?q=80&w=1200&auto=format&fit=crop');}
+.otros .card::before{background-image:url('https://images.unsplash.com/photo-1493612276216-ee3925520721?q=80&w=1200&auto=format&fit=crop');}
+.card-overlay{position:absolute;inset:0;background:linear-gradient(rgba(0,0,0,.2), rgba(0,0,0,.8));}
+.card-body{position:relative;z-index:3;text-align:center;padding:20px;}
+.card-icon{font-size:3rem;display:block;margin-bottom:15px;}
+.card-label{display:block;font-size:2rem;font-family:'Cinzel', serif;margin-bottom:10px;}
+.card-description{line-height:1.6;margin-bottom:25px;}
 .upload-btn{
   border:none;
   padding:14px 24px;
@@ -182,14 +116,11 @@ nav{
   cursor:pointer;
   font-weight:bold;
   transition:.3s;
+  color:#1a1a1a;
+  font-family:'Inter', sans-serif;
 }
-.upload-btn:hover{
-  transform:translateY(-3px);
-}
-.file-list{
-  padding:18px;
-  background:rgba(0,0,0,.2);
-}
+.upload-btn:hover{transform:translateY(-3px);}
+.file-list{padding:18px;background:rgba(0,0,0,.2);}
 .file-item{
   background:rgba(255,255,255,.04);
   padding:12px;
@@ -201,26 +132,12 @@ nav{
   gap:10px;
   flex-wrap:wrap;
 }
-.file-link{
-  cursor:pointer;
-  flex:1;
-  word-break:break-word;
-}
-.btn-group{
-  display:flex;
-  gap:8px;
-}
-.action-btn{
-  border:none;
-  padding:6px 12px;
-  border-radius:20px;
-  cursor:pointer;
-  font-size:0.9rem;
-}
-.view-btn{ background:#d4af37; color:black; }
-.download-btn{ background:#5aa9ff; color:white; }
-.delete-btn{ background:#ff5c5c; color:white; }
-
+.file-link{cursor:pointer;flex:1;word-break:break-word;}
+.btn-group{display:flex;gap:8px;}
+.action-btn{border:none;padding:6px 12px;border-radius:20px;cursor:pointer;font-family:'Inter', sans-serif;font-size:0.85rem;}
+.view-btn{background:#d4af37;color:#1a1a1a;}
+.download-btn{background:#5aa9ff;color:white;}
+.delete-btn{background:#ff5c5c;color:white;}
 .modal{
   display:none;
   position:fixed;
@@ -236,224 +153,289 @@ nav{
   background:#111;
   padding:20px;
   border-radius:25px;
+  max-height:90vh;
+  overflow-y:auto;
 }
-.modal-close{
-  float:right;
-  font-size:2.5rem;
-  cursor:pointer;
-  color:#aaa;
-}
-.viewer-container{
-  margin-top:20px;
-  text-align:center;
-}
-.viewer-container img, .viewer-container video{
-  max-width:100%;
-  max-height:70vh;
+.modal-close{float:right;font-size:2rem;cursor:pointer;color:var(--gold-soft);}
+.viewer-container{margin-top:20px;text-align:center;}
+.viewer-container img,.viewer-container video{max-width:100%;max-height:70vh;}
+.viewer-container audio{width:100%;}
+.viewer-container iframe{width:100%;height:70vh;border:none;}
+.storage-info{
+  background:rgba(212,175,55,.1);
+  border:1px solid var(--gold);
   border-radius:12px;
-}
-.viewer-container audio{
-  width:100%;
-}
-.viewer-container iframe{
-  width:100%;
-  height:70vh;
-  border:none;
-  border-radius:12px;
-}
-footer{
-  padding:40px;
+  padding:15px;
+  margin-bottom:30px;
   text-align:center;
-  border-top:1px solid rgba(255,255,255,.08);
+  color:var(--gold-soft);
+}
+.storage-bar{
+  width:100%;
+  height:8px;
+  background:rgba(255,255,255,.1);
+  border-radius:4px;
+  margin-top:10px;
+  overflow:hidden;
+}
+.storage-bar-fill{
+  height:100%;
+  background:linear-gradient(90deg,var(--gold),var(--gold-soft));
+  border-radius:4px;
+  transition:width 0.3s;
+}
+.msg{
+  margin-top:10px;
+  padding:8px 12px;
+  border-radius:8px;
+  font-size:0.9rem;
+  text-align:center;
+  font-family:'Inter', sans-serif;
+  min-height:20px;
+}
+.msg-error{background:rgba(255,92,92,.15);color:#ff5c5c;border:1px solid rgba(255,92,92,.3);}
+.msg-success{background:rgba(90,169,255,.15);color:#5aa9ff;border:1px solid rgba(90,169,255,.3);}
+.msg-info{background:rgba(212,175,55,.15);color:var(--gold-soft);border:1px solid rgba(212,175,55,.3);}
+footer{padding:40px;text-align:center;border-top:1px solid rgba(255,255,255,.08);}
+@media(max-width:768px){
+  nav{padding:20px;}
+  .hero h2{font-size:3rem;}
 }
 </style>
 </head>
 <body>
 <div class="top-line"></div>
 <nav>
-  <div class="brand">
-    <h1>LUCERNA</h1>
-  </div>
+  <div class="brand"><h1>LUCERNA</h1></div>
 </nav>
-
 <section class="hero">
-<div class="hero-content">
-<h2>Proyecto Final</h2>
-<p>Un espacio elegante para compartir expresiones creativas y almacenar archivos localmente.</p>
-</div>
+  <div class="hero-content">
+    <h2>Proyecto Final</h2>
+    <p>Un espacio elegante para compartir expresiones creativas y almacenar archivos localmente.</p>
+  </div>
 </section>
-
 <section class="cards-section">
-<div class="section-title">
-<h3>Categorías Creativas</h3>
-</div>
-<div class="cards-grid">
-  <!-- COMIC -->
-  <div class="category-block comic">
-    <div class="card"><div class="card-overlay"></div>
-      <div class="card-body">
-        <span class="card-icon">💥</span>
-        <span class="card-label">Cómic</span>
-        <p class="card-description">Historias visuales y narrativas gráficas.</p>
-        <button class="upload-btn" onclick="document.getElementById('inp-comic').click()">Subir archivo</button>
-        <input type="file" id="inp-comic" accept="image/*,video/*,audio/*,.pdf,.doc,.docx,.txt" style="display:none" onchange="subirArchivo(this,'comic')"/>
-      </div>
-    </div>
-    <div class="file-list" id="list-comic"></div>
+  <div class="storage-info">
+    <strong>💾 Almacenamiento Local</strong><br>
+    <span id="storage-text">Calculando espacio disponible...</span>
+    <div class="storage-bar"><div class="storage-bar-fill" id="storage-bar" style="width:0%"></div></div>
+    <small style="color:var(--muted);display:block;margin-top:5px;">Los archivos se guardan en TU navegador. Cada visitante tiene su propia biblioteca.</small>
   </div>
-
-  <!-- HISTORIETA -->
-  <div class="category-block historieta">
-    <div class="card"><div class="card-overlay"></div>
-      <div class="card-body">
-        <span class="card-icon">📚</span>
-        <span class="card-label">Historieta</span>
-        <p class="card-description">Narrativas ilustradas y secuenciales.</p>
-        <button class="upload-btn" onclick="document.getElementById('inp-historieta').click()">Subir archivo</button>
-        <input type="file" id="inp-historieta" accept="image/*,video/*,audio/*,.pdf,.doc,.docx,.txt" style="display:none" onchange="subirArchivo(this,'historieta')"/>
+  <div class="section-title"><h3>Categorías Creativas</h3></div>
+  <div class="cards-grid">
+    <!-- COMIC -->
+    <div class="category-block comic">
+      <div class="card">
+        <div class="card-overlay"></div>
+        <div class="card-body">
+          <span class="card-icon">💥</span>
+          <span class="card-label">Cómic</span>
+          <p class="card-description">Historias visuales y narrativas gráficas.</p>
+          <button class="upload-btn" onclick="document.getElementById('inp-comic').click()">Subir archivo</button>
+          <input type="file" id="inp-comic" accept="image/*,video/*,audio/*,.pdf,.doc,.docx,.txt" style="display:none" onchange="subirArchivo(this,'comic')" />
+          <div id="msg-comic" class="msg"></div>
+        </div>
       </div>
+      <div class="file-list" id="list-comic"></div>
     </div>
-    <div class="file-list" id="list-historieta"></div>
-  </div>
-
-  <!-- MANGA -->
-  <div class="category-block manga">
-    <div class="card"><div class="card-overlay"></div>
-      <div class="card-body">
-        <span class="card-icon">🎌</span>
-        <span class="card-label">Manga</span>
-        <p class="card-description">Arte y narrativa inspirada en el manga japonés.</p>
-        <button class="upload-btn" onclick="document.getElementById('inp-manga').click()">Subir archivo</button>
-        <input type="file" id="inp-manga" accept="image/*,video/*,audio/*,.pdf,.doc,.docx,.txt" style="display:none" onchange="subirArchivo(this,'manga')"/>
+    <!-- HISTORIETA -->
+    <div class="category-block historieta">
+      <div class="card">
+        <div class="card-overlay"></div>
+        <div class="card-body">
+          <span class="card-icon">📚</span>
+          <span class="card-label">Historieta</span>
+          <p class="card-description">Narrativas ilustradas y secuenciales.</p>
+          <button class="upload-btn" onclick="document.getElementById('inp-historieta').click()">Subir archivo</button>
+          <input type="file" id="inp-historieta" accept="image/*,video/*,audio/*,.pdf,.doc,.docx,.txt" style="display:none" onchange="subirArchivo(this,'historieta')" />
+          <div id="msg-historieta" class="msg"></div>
+        </div>
       </div>
+      <div class="file-list" id="list-historieta"></div>
     </div>
-    <div class="file-list" id="list-manga"></div>
-  </div>
-
-  <!-- PODCAST -->
-  <div class="category-block podcast">
-    <div class="card"><div class="card-overlay"></div>
-      <div class="card-body">
-        <span class="card-icon">🎙️</span>
-        <span class="card-label">Podcast</span>
-        <p class="card-description">Entrevistas, narraciones y contenido sonoro.</p>
-        <button class="upload-btn" onclick="document.getElementById('inp-podcast').click()">Subir archivo</button>
-        <input type="file" id="inp-podcast" accept="audio/*,video/*,.mp3,.wav,.ogg" style="display:none" onchange="subirArchivo(this,'podcast')"/>
+    <!-- MANGA -->
+    <div class="category-block manga">
+      <div class="card">
+        <div class="card-overlay"></div>
+        <div class="card-body">
+          <span class="card-icon">🎌</span>
+          <span class="card-label">Manga</span>
+          <p class="card-description">Arte y narrativa inspirada en el manga japonés.</p>
+          <button class="upload-btn" onclick="document.getElementById('inp-manga').click()">Subir archivo</button>
+          <input type="file" id="inp-manga" accept="image/*,video/*,audio/*,.pdf,.doc,.docx,.txt" style="display:none" onchange="subirArchivo(this,'manga')" />
+          <div id="msg-manga" class="msg"></div>
+        </div>
       </div>
+      <div class="file-list" id="list-manga"></div>
     </div>
-    <div class="file-list" id="list-podcast"></div>
-  </div>
-
-  <!-- ENSAYO -->
-  <div class="category-block ensayo">
-    <div class="card"><div class="card-overlay"></div>
-      <div class="card-body">
-        <span class="card-icon">📝</span>
-        <span class="card-label">Ensayo</span>
-        <p class="card-description">Reflexiones, análisis y escritura académica.</p>
-        <button class="upload-btn" onclick="document.getElementById('inp-ensayo').click()">Subir archivo</button>
-        <input type="file" id="inp-ensayo" accept=".pdf,.doc,.docx,.txt" style="display:none" onchange="subirArchivo(this,'ensayo')"/>
+    <!-- PODCAST -->
+    <div class="category-block podcast">
+      <div class="card">
+        <div class="card-overlay"></div>
+        <div class="card-body">
+          <span class="card-icon">🎙️</span>
+          <span class="card-label">Podcast</span>
+          <p class="card-description">Entrevistas, narraciones y contenido sonoro.</p>
+          <button class="upload-btn" onclick="document.getElementById('inp-podcast').click()">Subir archivo</button>
+          <input type="file" id="inp-podcast" accept="audio/*,video/*,.mp3,.wav,.ogg" style="display:none" onchange="subirArchivo(this,'podcast')" />
+          <div id="msg-podcast" class="msg"></div>
+        </div>
       </div>
+      <div class="file-list" id="list-podcast"></div>
     </div>
-    <div class="file-list" id="list-ensayo"></div>
-  </div>
-
-  <!-- CALIGRAMAS -->
-  <div class="category-block caligramas">
-    <div class="card"><div class="card-overlay"></div>
-      <div class="card-body">
-        <span class="card-icon">✒️</span>
-        <span class="card-label">Caligramas</span>
-        <p class="card-description">Poesía visual y composiciones tipográficas.</p>
-        <button class="upload-btn" onclick="document.getElementById('inp-caligramas').click()">Subir archivo</button>
-        <input type="file" id="inp-caligramas" accept="image/*,.pdf,.doc,.docx,.txt" style="display:none" onchange="subirArchivo(this,'caligramas')"/>
+    <!-- ENSAYO -->
+    <div class="category-block ensayo">
+      <div class="card">
+        <div class="card-overlay"></div>
+        <div class="card-body">
+          <span class="card-icon">📝</span>
+          <span class="card-label">Ensayo</span>
+          <p class="card-description">Reflexiones, análisis y escritura académica.</p>
+          <button class="upload-btn" onclick="document.getElementById('inp-ensayo').click()">Subir archivo</button>
+          <input type="file" id="inp-ensayo" accept=".pdf,.doc,.docx,.txt" style="display:none" onchange="subirArchivo(this,'ensayo')" />
+          <div id="msg-ensayo" class="msg"></div>
+        </div>
       </div>
+      <div class="file-list" id="list-ensayo"></div>
     </div>
-    <div class="file-list" id="list-caligramas"></div>
-  </div>
-
-  <!-- OTROS -->
-  <div class="category-block otros">
-    <div class="card"><div class="card-overlay"></div>
-      <div class="card-body">
-        <span class="card-icon">✨</span>
-        <span class="card-label">Otros</span>
-        <p class="card-description">Contenido creativo adicional.</p>
-        <button class="upload-btn" onclick="document.getElementById('inp-otros').click()">Subir archivo</button>
-        <input type="file" id="inp-otros" accept="*/*" style="display:none" onchange="subirArchivo(this,'otros')"/>
+    <!-- CALIGRAMAS -->
+    <div class="category-block caligramas">
+      <div class="card">
+        <div class="card-overlay"></div>
+        <div class="card-body">
+          <span class="card-icon">✒️</span>
+          <span class="card-label">Caligramas</span>
+          <p class="card-description">Poesía visual y composiciones tipográficas.</p>
+          <button class="upload-btn" onclick="document.getElementById('inp-caligramas').click()">Subir archivo</button>
+          <input type="file" id="inp-caligramas" accept="image/*,.pdf,.doc,.docx,.txt" style="display:none" onchange="subirArchivo(this,'caligramas')" />
+          <div id="msg-caligramas" class="msg"></div>
+        </div>
       </div>
+      <div class="file-list" id="list-caligramas"></div>
     </div>
-    <div class="file-list" id="list-otros"></div>
+    <!-- OTROS -->
+    <div class="category-block otros">
+      <div class="card">
+        <div class="card-overlay"></div>
+        <div class="card-body">
+          <span class="card-icon">✨</span>
+          <span class="card-label">Otros</span>
+          <p class="card-description">Contenido creativo adicional.</p>
+          <button class="upload-btn" onclick="document.getElementById('inp-otros').click()">Subir archivo</button>
+          <input type="file" id="inp-otros" accept="*/*" style="display:none" onchange="subirArchivo(this,'otros')" />
+          <div id="msg-otros" class="msg"></div>
+        </div>
+      </div>
+      <div class="file-list" id="list-otros"></div>
+    </div>
   </div>
-</div>
 </section>
-
 <footer>
-<h3>LUCERNA</h3>
-<p>Proyecto Final · Literatura Emergente</p>
+  <h3>LUCERNA</h3>
+  <p>Proyecto Final · Literatura Emergente</p>
 </footer>
-
 <!-- MODAL -->
 <div id="fileModal" class="modal">
   <div class="modal-content">
-    <span class="modal-close" onclick="cerrarModal()">×</span>
+    <span class="modal-close" onclick="cerrarModal()">&times;</span>
     <div id="modalViewer" class="viewer-container"></div>
   </div>
 </div>
-
 <script>
 const DB_NAME = 'LucernaDB';
 const STORE_NAME = 'archivos';
 let db;
+let dbReady = false;
 
-async function abrirDB() {
+/* ================= SOLICITAR ALMACENAMIENTO PERSISTENTE ================= */
+async function solicitarPersistencia() {
+  if (navigator.storage && navigator.storage.persist) {
+    try {
+      const isPersistent = await navigator.storage.persist();
+      console.log('Almacenamiento persistente:', isPersistent ? 'Concedido' : 'Denegado');
+    } catch(e) {
+      console.log('No se pudo solicitar persistencia:', e);
+    }
+  }
+  if (navigator.storage && navigator.storage.estimate) {
+    try {
+      const estimate = await navigator.storage.estimate();
+      const used = (estimate.usage / 1024 / 1024).toFixed(1);
+      const total = estimate.quota ? (estimate.quota / 1024 / 1024).toFixed(0) : '∞';
+      const percent = estimate.quota ? Math.min((estimate.usage / estimate.quota) * 100, 100) : 0;
+
+      document.getElementById('storage-text').textContent =
+        `Usado: ${used} MB / ${total} MB disponibles`;
+      document.getElementById('storage-bar').style.width = percent + '%';
+    } catch(e) {
+      document.getElementById('storage-text').textContent = 'Espacio: No disponible';
+    }
+  }
+}
+
+/* ================= ABRIR DB ================= */
+function abrirDB() {
   return new Promise((resolve, reject) => {
-    const request = indexedDB.open(DB_NAME, 2); // Aumentamos versión por si hay cambios
+    const request = indexedDB.open(DB_NAME, 1);
+
+    request.onerror = () => {
+      console.error('Error al abrir IndexedDB:', request.error);
+      reject(request.error);
+    };
+
     request.onupgradeneeded = e => {
       const database = e.target.result;
       if (!database.objectStoreNames.contains(STORE_NAME)) {
         database.createObjectStore(STORE_NAME, { keyPath: 'id' });
       }
     };
-    request.onsuccess = e => { db = e.target.result; resolve(db); };
-    request.onerror = () => reject(request.error);
+
+    request.onsuccess = e => {
+      db = e.target.result;
+      dbReady = true;
+      console.log('IndexedDB abierta correctamente');
+      resolve(db);
+    };
   });
 }
 
+/* ================= GUARDAR ================= */
 async function guardarArchivo(file, categoria) {
   const id = Date.now() + "_" + Math.random().toString(36).substr(2, 9);
 
-  try {
-    const arrayBuffer = await file.arrayBuffer();
+  const data = {
+    id: id,
+    categoria: categoria,
+    nombre: file.name,
+    tipo: file.type || 'application/octet-stream',
+    contenido: file,
+    size: file.size,
+    fecha: new Date().toISOString()
+  };
 
-    const data = {
-      id: id,
-      categoria: categoria,
-      nombre: file.name,
-      tipo: file.type,
-      tamaño: file.size,
-      contenido: arrayBuffer,
-      fecha: new Date().toISOString()
+  return new Promise((resolve, reject) => {
+    const tx = db.transaction(STORE_NAME, 'readwrite');
+    const store = tx.objectStore(STORE_NAME);
+    const req = store.add(data);
+
+    req.onsuccess = () => resolve(id);
+    req.onerror = () => {
+      if (req.error.name === 'QuotaExceededError') {
+        reject(new Error('Espacio insuficiente. Elimina archivos antiguos.'));
+      } else {
+        reject(req.error);
+      }
     };
-
-    return new Promise((resolve, reject) => {
-      const tx = db.transaction(STORE_NAME, 'readwrite');
-      const store = tx.objectStore(STORE_NAME);
-      const req = store.add(data);
-      req.onsuccess = () => resolve();
-      req.onerror = () => reject(req.error);
-    });
-  } catch (err) {
-    console.error("Error al guardar archivo:", err);
-    throw err;
-  }
+  });
 }
 
+/* ================= OBTENER POR CATEGORÍA ================= */
 async function obtenerArchivos(categoria) {
   return new Promise((resolve, reject) => {
     const tx = db.transaction(STORE_NAME, 'readonly');
     const store = tx.objectStore(STORE_NAME);
     const req = store.getAll();
+
     req.onsuccess = () => {
       const filtrados = req.result.filter(a => a.categoria === categoria);
       resolve(filtrados);
@@ -462,65 +444,130 @@ async function obtenerArchivos(categoria) {
   });
 }
 
+/* ================= OBTENER UNO ================= */
+async function obtenerArchivo(id) {
+  return new Promise((resolve, reject) => {
+    const tx = db.transaction(STORE_NAME, 'readonly');
+    const store = tx.objectStore(STORE_NAME);
+    const req = store.get(id);
+
+    req.onsuccess = () => resolve(req.result);
+    req.onerror = () => reject(req.error);
+  });
+}
+
+/* ================= ELIMINAR ================= */
 async function eliminarArchivo(id) {
   return new Promise((resolve, reject) => {
     const tx = db.transaction(STORE_NAME, 'readwrite');
     const store = tx.objectStore(STORE_NAME);
     const req = store.delete(id);
+
     req.onsuccess = () => resolve();
     req.onerror = () => reject(req.error);
   });
 }
 
+/* ================= MOSTRAR MENSAJE ================= */
+function mostrarMensaje(categoria, mensaje, tipo) {
+  const msgDiv = document.getElementById('msg-' + categoria);
+  if (!msgDiv) return;
+  msgDiv.className = 'msg msg-' + tipo;
+  msgDiv.textContent = mensaje;
+  setTimeout(() => {
+    msgDiv.textContent = '';
+    msgDiv.className = 'msg';
+  }, 5000);
+}
+
+/* ================= FORMATEAR TAMAÑO ================= */
+function formatSize(bytes) {
+  if (bytes === 0) return '0 B';
+  const k = 1024;
+  const sizes = ['B', 'KB', 'MB', 'GB'];
+  const i = Math.floor(Math.log(bytes) / Math.log(k));
+  return parseFloat((bytes / Math.pow(k, i)).toFixed(1)) + ' ' + sizes[i];
+}
+
+/* ================= SUBIR ================= */
 async function subirArchivo(input, categoria) {
   const file = input.files[0];
-  if (!file) return;
+  if (!file) {
+    mostrarMensaje(categoria, 'No se seleccionó ningún archivo', 'error');
+    return;
+  }
+
+  console.log('Subiendo archivo:', file.name, 'a categoría:', categoria);
 
   try {
+    mostrarMensaje(categoria, '⏳ Subiendo: ' + file.name + ' (' + formatSize(file.size) + ')', 'info');
+
     await guardarArchivo(file, categoria);
     await cargarLista(categoria);
+    await solicitarPersistencia();
+
+    mostrarMensaje(categoria, '✅ Archivo guardado correctamente', 'success');
     input.value = '';
   } catch (err) {
-    console.error(err);
-    alert("Error al subir el archivo: " + err.message);
+    console.error('Error al subir:', err);
+    mostrarMensaje(categoria, '❌ ' + (err.message || 'Error al guardar'), 'error');
+    input.value = '';
   }
 }
 
+/* ================= CARGAR LISTA ================= */
 async function cargarLista(categoria) {
-  const archivos = await obtenerArchivos(categoria);
-  const container = document.getElementById('list-' + categoria);
-  container.innerHTML = '';
+  try {
+    const archivos = await obtenerArchivos(categoria);
+    const container = document.getElementById('list-' + categoria);
+    if (!container) {
+      console.error('No se encontró contenedor para:', categoria);
+      return;
+    }
+    container.innerHTML = '';
 
-  archivos.forEach(arch => {
-    const div = document.createElement('div');
-    div.className = 'file-item';
-    const tamaño = (arch.tamaño / 1024).toFixed(1) + ' KB';
+    if (archivos.length === 0) {
+      container.innerHTML = '<p style="text-align:center;color:var(--muted);padding:10px;font-style:italic;">No hay archivos aún</p>';
+      return;
+    }
 
-    div.innerHTML = `
-      <span class="file-link">${arch.nombre} <small>(${tamaño})</small></span>
-      <div class="btn-group">
-        <button class="action-btn view-btn" onclick="verArchivo('${arch.id}')">Ver</button>
-        <button class="action-btn download-btn" onclick="descargarArchivo('${arch.id}')">Descargar</button>
-        <button class="action-btn delete-btn" onclick="borrarArchivo('${arch.id}','${categoria}')">Borrar</button>
-      </div>
-    `;
-    container.appendChild(div);
-  });
+    archivos.forEach(arch => {
+      const div = document.createElement('div');
+      div.className = 'file-item';
+      div.innerHTML = `
+        <span class="file-link" onclick="verArchivo('${arch.id}')" title="${arch.nombre} (${formatSize(arch.size || 0)})">
+          ${arch.nombre}
+          <small style="color:var(--muted);display:block;">${formatSize(arch.size || 0)}</small>
+        </span>
+        <div class="btn-group">
+          <button class="action-btn view-btn" onclick="verArchivo('${arch.id}')">Ver</button>
+          <button class="action-btn download-btn" onclick="descargarArchivo('${arch.id}')">Descargar</button>
+          <button class="action-btn delete-btn" onclick="borrarArchivo('${arch.id}','${categoria}')">Borrar</button>
+        </div>
+      `;
+      container.appendChild(div);
+    });
+
+    console.log('Lista cargada para', categoria, ':', archivos.length, 'archivos');
+  } catch (err) {
+    console.error('Error al cargar lista:', err);
+  }
 }
 
+/* ================= VER ================= */
 async function verArchivo(id) {
-  const tx = db.transaction(STORE_NAME, 'readonly');
-  const req = tx.objectStore(STORE_NAME).get(id);
-
-  req.onsuccess = () => {
-    const arch = req.result;
-    if (!arch) return;
-
-    const blob = new Blob([arch.contenido], { type: arch.tipo });
-    const url = URL.createObjectURL(blob);
+  try {
+    const arch = await obtenerArchivo(id);
+    if (!arch) {
+      alert('Archivo no encontrado');
+      return;
+    }
 
     const viewer = document.getElementById('modalViewer');
     viewer.innerHTML = '';
+
+    const blob = arch.contenido instanceof Blob ? arch.contenido : new Blob([arch.contenido]);
+    const url = URL.createObjectURL(blob);
 
     if (arch.tipo.startsWith('image/')) {
       viewer.innerHTML = `<img src="${url}" alt="${arch.nombre}">`;
@@ -528,51 +575,105 @@ async function verArchivo(id) {
       viewer.innerHTML = `<video controls src="${url}"></video>`;
     } else if (arch.tipo.startsWith('audio/')) {
       viewer.innerHTML = `<audio controls src="${url}"></audio>`;
-    } else {
+    } else if (arch.tipo === 'application/pdf') {
       viewer.innerHTML = `<iframe src="${url}"></iframe>`;
+    } else if (arch.tipo.startsWith('text/') || arch.nombre.endsWith('.txt')) {
+      const text = await blob.text();
+      viewer.innerHTML = `
+        <div style="background:#1a1a1a;padding:20px;border-radius:10px;text-align:left;max-height:70vh;overflow:auto;">
+          <pre style="white-space:pre-wrap;word-break:break-word;color:var(--text);font-family:monospace;">${text}</pre>
+        </div>
+      `;
+    } else {
+      viewer.innerHTML = `
+        <div style="padding:40px;text-align:center;">
+          <p style="font-size:1.2rem;margin-bottom:20px;">Vista previa no disponible para este tipo de archivo</p>
+          <button class="upload-btn" onclick="descargarArchivo('${arch.id}')">📥 Descargar archivo</button>
+        </div>
+      `;
     }
 
     document.getElementById('fileModal').style.display = 'flex';
-  };
+  } catch (err) {
+    console.error('Error al ver archivo:', err);
+    alert('Error al abrir el archivo');
+  }
 }
 
+/* ================= CERRAR MODAL ================= */
 function cerrarModal() {
   document.getElementById('fileModal').style.display = 'none';
+  const viewer = document.getElementById('modalViewer');
+  viewer.innerHTML = '';
 }
 
+/* ================= DESCARGAR ================= */
 async function descargarArchivo(id) {
-  const tx = db.transaction(STORE_NAME, 'readonly');
-  const req = tx.objectStore(STORE_NAME).get(id);
+  try {
+    const arch = await obtenerArchivo(id);
+    if (!arch) return;
 
-  req.onsuccess = () => {
-    const arch = req.result;
-    const blob = new Blob([arch.contenido], { type: arch.tipo });
+    const blob = arch.contenido instanceof Blob ? arch.contenido : new Blob([arch.contenido]);
     const url = URL.createObjectURL(blob);
+
     const a = document.createElement('a');
     a.href = url;
     a.download = arch.nombre;
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
-  };
-}
 
-async function borrarArchivo(id, categoria) {
-  if (confirm("¿Estás seguro de borrar este archivo?")) {
-    await eliminarArchivo(id);
-    await cargarLista(categoria);
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+  } catch (err) {
+    console.error('Error al descargar:', err);
+    alert('Error al descargar el archivo');
   }
 }
 
-// Iniciar
-const categorias = ['comic','historieta','manga','podcast','ensayo','caligramas','otros'];
+/* ================= BORRAR ================= */
+async function borrarArchivo(id, categoria) {
+  if (!confirm('¿Estás seguro de que quieres eliminar este archivo?')) return;
 
-abrirDB().then(() => {
-  categorias.forEach(c => cargarLista(c));
-}).catch(err => {
-  console.error("Error al abrir IndexedDB:", err);
-  alert("Error al inicializar la base de datos");
+  try {
+    await eliminarArchivo(id);
+    await cargarLista(categoria);
+    await solicitarPersistencia();
+    mostrarMensaje(categoria, '✅ Archivo eliminado', 'success');
+  } catch (err) {
+    mostrarMensaje(categoria, '❌ Error al eliminar', 'error');
+    console.error(err);
+  }
+}
+
+/* ================= INICIAR ================= */
+const categorias = ['comic', 'historieta', 'manga', 'podcast', 'ensayo', 'caligramas', 'otros'];
+
+document.getElementById('fileModal').addEventListener('click', function(e) {
+  if (e.target === this) cerrarModal();
 });
+
+async function init() {
+  try {
+    await abrirDB();
+    await solicitarPersistencia();
+
+    for (const c of categorias) {
+      await cargarLista(c);
+    }
+
+    console.log('✅ Lucerna inicializado correctamente');
+  } catch (err) {
+    console.error('❌ Error de inicialización:', err);
+    alert('Error al inicializar el almacenamiento. Revisa la consola (F12) para más detalles.');
+  }
+}
+
+// Esperar a que el DOM esté listo
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', init);
+} else {
+  init();
+}
 </script>
 </body>
 </html>
