@@ -163,14 +163,14 @@ nav{
   transform:scale(1.08);
 }
 
-/* ================= FONDOS ================= */
+/* ================= FONDOS TEMÁTICOS ================= */
 
 .comic .card::before{
-  background-image:url('https://images.unsplash.com/photo-1514329926535-7f6db2f4b341?q=80&w=1200&auto=format&fit=crop');
+  background-image:url('https://images.unsplash.com/photo-1608889175123-8ee362201f81?q=80&w=1200&auto=format&fit=crop');
 }
 
 .historieta .card::before{
-  background-image:url('https://images.unsplash.com/photo-1507842217343-583bb7270b66?q=80&w=1200&auto=format&fit=crop');
+  background-image:url('https://images.unsplash.com/photo-1516979187457-637abb4f9353?q=80&w=1200&auto=format&fit=crop');
 }
 
 .manga .card::before{
@@ -186,7 +186,7 @@ nav{
 }
 
 .caligramas .card::before{
-  background-image:url('https://images.unsplash.com/photo-1516979187457-637abb4f9353?q=80&w=1200&auto=format&fit=crop');
+  background-image:url('https://images.unsplash.com/photo-1455390582262-044cdead277a?q=80&w=1200&auto=format&fit=crop');
 }
 
 .otros .card::before{
@@ -613,7 +613,7 @@ Contenido creativo adicional.
 Subir archivo
 </button>
 
-<input type="file" id="inp-otros" accept="*"
+<input type="file" id="inp-otros" accept="*/*"
 style="display:none"
 onchange="subirArchivo(this,'otros')" />
 
@@ -655,8 +655,9 @@ onchange="subirArchivo(this,'otros')" />
 
 const DB_NAME = 'LucernaDB';
 const STORE_NAME = 'archivos';
-
 let db;
+
+/* ================= ABRIR DB ================= */
 
 function abrirDB(){
 
@@ -664,13 +665,15 @@ function abrirDB(){
 
     const request = indexedDB.open(DB_NAME,1);
 
+    request.onerror = () => reject(request.error);
+
     request.onupgradeneeded = e => {
 
-      db = e.target.result;
+      const database = e.target.result;
 
-      if(!db.objectStoreNames.contains(STORE_NAME)){
+      if(!database.objectStoreNames.contains(STORE_NAME)){
 
-        db.createObjectStore(STORE_NAME,{keyPath:'id'});
+        database.createObjectStore(STORE_NAME,{keyPath:'id'});
 
       }
 
@@ -679,14 +682,7 @@ function abrirDB(){
     request.onsuccess = e => {
 
       db = e.target.result;
-
-      resolve();
-
-    };
-
-    request.onerror = e => {
-
-      reject(e);
+      resolve(db);
 
     };
 
@@ -694,53 +690,85 @@ function abrirDB(){
 
 }
 
+/* ================= GUARDAR ================= */
+
 async function guardarArchivo(file,categoria){
 
-  const id = Date.now().toString();
-
-  const buffer = await file.arrayBuffer();
+  const id = Date.now() + "_" + Math.random();
 
   const data = {
     id:id,
     categoria:categoria,
     nombre:file.name,
     tipo:file.type,
-    contenido:buffer
+    contenido:file
   };
 
-  const tx = db.transaction(STORE_NAME,'readwrite');
+  return new Promise((resolve,reject)=>{
 
-  tx.objectStore(STORE_NAME).add(data);
+    const tx = db.transaction(STORE_NAME,'readwrite');
 
-}
+    const store = tx.objectStore(STORE_NAME);
 
-async function obtenerArchivos(categoria){
+    const req = store.add(data);
 
-  return new Promise(resolve=>{
+    req.onsuccess = ()=> resolve();
 
-    const tx = db.transaction(STORE_NAME,'readonly');
-
-    const req = tx.objectStore(STORE_NAME).getAll();
-
-    req.onsuccess = ()=>{
-
-      resolve(
-        req.result.filter(a=>a.categoria===categoria)
-      );
-
-    };
+    req.onerror = ()=> reject(req.error);
 
   });
 
 }
 
-async function eliminarArchivo(id){
+/* ================= OBTENER ================= */
 
-  const tx = db.transaction(STORE_NAME,'readwrite');
+async function obtenerArchivos(categoria){
 
-  tx.objectStore(STORE_NAME).delete(id);
+  return new Promise((resolve,reject)=>{
+
+    const tx = db.transaction(STORE_NAME,'readonly');
+
+    const store = tx.objectStore(STORE_NAME);
+
+    const req = store.getAll();
+
+    req.onsuccess = ()=>{
+
+      const filtrados = req.result.filter(
+        a => a.categoria === categoria
+      );
+
+      resolve(filtrados);
+
+    };
+
+    req.onerror = ()=> reject(req.error);
+
+  });
 
 }
+
+/* ================= ELIMINAR ================= */
+
+async function eliminarArchivo(id){
+
+  return new Promise((resolve,reject)=>{
+
+    const tx = db.transaction(STORE_NAME,'readwrite');
+
+    const store = tx.objectStore(STORE_NAME);
+
+    const req = store.delete(id);
+
+    req.onsuccess = ()=> resolve();
+
+    req.onerror = ()=> reject(req.error);
+
+  });
+
+}
+
+/* ================= SUBIR ================= */
 
 async function subirArchivo(input,categoria){
 
@@ -748,11 +776,25 @@ async function subirArchivo(input,categoria){
 
   if(!file) return;
 
-  await guardarArchivo(file,categoria);
+  try{
 
-  cargarLista(categoria);
+    await guardarArchivo(file,categoria);
+
+    await cargarLista(categoria);
+
+    input.value = '';
+
+  }catch(err){
+
+    alert("Error al subir archivo");
+
+    console.error(err);
+
+  }
 
 }
+
+/* ================= CARGAR LISTA ================= */
 
 async function cargarLista(categoria){
 
@@ -799,6 +841,8 @@ async function cargarLista(categoria){
 
 }
 
+/* ================= VER ================= */
+
 async function verArchivo(id){
 
   const tx = db.transaction(STORE_NAME,'readonly');
@@ -809,11 +853,7 @@ async function verArchivo(id){
 
     const arch = req.result;
 
-    const blob = new Blob([arch.contenido], {
-      type: arch.tipo
-    });
-
-    const url = URL.createObjectURL(blob);
+    const url = URL.createObjectURL(arch.contenido);
 
     const viewer = document.getElementById('modalViewer');
 
@@ -849,11 +889,15 @@ async function verArchivo(id){
 
 }
 
+/* ================= CERRAR MODAL ================= */
+
 function cerrarModal(){
 
   document.getElementById('fileModal').style.display='none';
 
 }
+
+/* ================= DESCARGAR ================= */
 
 async function descargarArchivo(id){
 
@@ -865,11 +909,7 @@ async function descargarArchivo(id){
 
     const arch = req.result;
 
-    const blob = new Blob([arch.contenido], {
-      type: arch.tipo
-    });
-
-    const url = URL.createObjectURL(blob);
+    const url = URL.createObjectURL(arch.contenido);
 
     const a = document.createElement('a');
 
@@ -883,11 +923,11 @@ async function descargarArchivo(id){
 
     document.body.removeChild(a);
 
-    URL.revokeObjectURL(url);
-
   };
 
 }
+
+/* ================= BORRAR ================= */
 
 async function borrarArchivo(id,categoria){
 
@@ -896,6 +936,8 @@ async function borrarArchivo(id,categoria){
   cargarLista(categoria);
 
 }
+
+/* ================= INICIAR ================= */
 
 const categorias = [
 'comic',
@@ -909,7 +951,11 @@ const categorias = [
 
 abrirDB().then(()=>{
 
-  categorias.forEach(c=>cargarLista(c));
+  categorias.forEach(c=>{
+
+    cargarLista(c);
+
+  });
 
 });
 
